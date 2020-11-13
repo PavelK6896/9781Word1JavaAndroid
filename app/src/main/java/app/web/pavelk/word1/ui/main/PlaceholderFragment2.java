@@ -2,6 +2,9 @@ package app.web.pavelk.word1.ui.main;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.text.method.KeyListener;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,6 +41,7 @@ public class PlaceholderFragment2 extends Fragment {
     private TextView textView1;
     private TextView textView2;
     private TextView textView3;
+    private TextView textView4;
     private EditText editText1;
 
     public static PlaceholderFragment2 newInstance(int index) {
@@ -63,13 +67,15 @@ public class PlaceholderFragment2 extends Fragment {
     public View onCreateView(
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_main2, container, false);
-        final Button button1 = (Button) root.findViewById(R.id.button1);
-        final Button button2 = (Button) root.findViewById(R.id.button2);
-        textView1 = root.findViewById(R.id.textView1);
-        textView2 = root.findViewById(R.id.textView2);
-        textView3 = root.findViewById(R.id.textView3);
-        editText1 = root.findViewById(R.id.editText1);
+        View view = inflater.inflate(R.layout.fragment_main2, container, false);
+
+        final Button button1 = (Button) view.findViewById(R.id.button1);
+        final Button button2 = (Button) view.findViewById(R.id.button2);
+        textView1 = view.findViewById(R.id.textView1);
+        textView2 = view.findViewById(R.id.textView2);
+        textView3 = view.findViewById(R.id.textView3);
+        textView4 = view.findViewById(R.id.textView4);
+        editText1 = view.findViewById(R.id.editText1);
         readFileWord();
         setWord();
 
@@ -90,14 +96,20 @@ public class PlaceholderFragment2 extends Fragment {
             }
         });
 
+        editText1.addTextChangedListener(new TextWatcher() {
 
-        editText1.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
+            public void afterTextChanged(Editable s) {
+            }
 
-                if (stringNow.charAt(0) == (char) event.getUnicodeChar()) {
+            public void beforeTextChanged(CharSequence s, int start,
+                                          int count, int after) {
+            }
+
+            public void onTextChanged(CharSequence s, int start,
+                                      int before, int count) {
+                if(s.length() == 0)return;
+                if (stringNow.charAt(0) ==  s.charAt(s.length() - 1)) {
                     stringNow = stringNow.substring(1);
-//                    System.out.println(((char) event.getUnicodeChar()));
                     textView3.setText(stringNow);
                     textView3.setTextColor(Color.rgb(0, 0, 0));
                     if (stringNow.length() == 0) {
@@ -107,13 +119,10 @@ public class PlaceholderFragment2 extends Fragment {
                 } else {
                     textView3.setTextColor(Color.argb(255, 250, 0, 0));
                 }
-
-                return true;
             }
         });
 
-
-        return root;
+        return view;
     }
 
     public void setWord() {
@@ -122,8 +131,9 @@ public class PlaceholderFragment2 extends Fragment {
         textView2.setText(listWord.get(intNow)[1]);
         textView3.setText(stringNow);
         editText1.setText("");
+        textView3.setTextColor(Color.rgb(0, 0, 0));
+        textView4.setText("" + intNow + " / " + listWord.size());
     }
-
 
     public void readFileWord() {
         String string = null;
@@ -142,11 +152,5 @@ public class PlaceholderFragment2 extends Fragment {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        System.out.println(listWord.size());
-        System.out.println(listWord.get(0)[0]);
-        System.out.println(listWord.get(0)[1]);
-        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     }
-
 }
