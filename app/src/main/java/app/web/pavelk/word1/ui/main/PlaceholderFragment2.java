@@ -1,11 +1,10 @@
 package app.web.pavelk.word1.ui.main;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.text.method.KeyListener;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,9 +17,12 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,11 +35,14 @@ import app.web.pavelk.word1.R;
 public class PlaceholderFragment2 extends Fragment {
 
     private static final String ARG_SECTION_NUMBER = "section_number";
+    private String FILENAME = "save3";
+
 
     private PageViewModel pageViewModel;
     private List<String[]> listWord = new ArrayList<>();
     private String stringNow = "";
     private int intNow = 0;
+    private int intNow2 = 0;
     private TextView textView1;
     private TextView textView2;
     private TextView textView3;
@@ -63,11 +68,40 @@ public class PlaceholderFragment2 extends Fragment {
         pageViewModel.setIndex(index);
     }
 
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+    }
+
+    @Override
+    public void onStop() {
+        try {
+            FileOutputStream fileOutputStream = getActivity().getApplicationContext().openFileOutput(FILENAME, Context.MODE_PRIVATE);
+            fileOutputStream.write((String.valueOf(intNow) + "\n" + String.valueOf(intNow * 2)).getBytes());
+            fileOutputStream.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        super.onStop();
+    }
+
     @Override
     public View onCreateView(
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main2, container, false);
+
+        try {
+            FileInputStream fileInputStream = getActivity().getApplicationContext().openFileInput(FILENAME);
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream, StandardCharsets.UTF_8));
+            intNow = Integer.parseInt(bufferedReader.readLine());
+            intNow2 = Integer.parseInt(bufferedReader.readLine());
+            System.out.println("-- " + intNow2);
+            bufferedReader.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         final Button button1 = (Button) view.findViewById(R.id.button1);
         final Button button2 = (Button) view.findViewById(R.id.button2);
@@ -107,8 +141,8 @@ public class PlaceholderFragment2 extends Fragment {
 
             public void onTextChanged(CharSequence s, int start,
                                       int before, int count) {
-                if(s.length() == 0)return;
-                if (stringNow.charAt(0) ==  s.charAt(s.length() - 1)) {
+                if (s.length() == 0) return;
+                if (stringNow.charAt(0) == s.charAt(s.length() - 1)) {
                     stringNow = stringNow.substring(1);
                     textView3.setText(stringNow);
                     textView3.setTextColor(Color.rgb(0, 0, 0));
