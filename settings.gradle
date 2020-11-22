@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "9781Word1Java"
+rootProject.name = "9781Word1JavaAndroid"

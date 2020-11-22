@@ -2,7 +2,9 @@ package app.web.pavelk.word1.ui.main;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -13,6 +15,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
@@ -25,6 +28,7 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import app.web.pavelk.word1.R;
 
@@ -32,7 +36,8 @@ import app.web.pavelk.word1.R;
 /**
  * A placeholder fragment containing a simple view.
  */
-public class PlaceholderFragment2 extends Fragment {
+@RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnInitListener {
 
     private static final String ARG_SECTION_NUMBER = "section_number";
     private String FILENAME = "save3";
@@ -48,6 +53,9 @@ public class PlaceholderFragment2 extends Fragment {
     private TextView textView3;
     private TextView textView4;
     private EditText editText1;
+    private TextToSpeech textToSpeech1;
+    private TextToSpeech textToSpeech2;
+
 
     public static PlaceholderFragment2 newInstance(int index) {
         PlaceholderFragment2 fragment = new PlaceholderFragment2();
@@ -76,7 +84,7 @@ public class PlaceholderFragment2 extends Fragment {
 
     @Override
     public void onStop() {
-        try {
+        try {//save file
             FileOutputStream fileOutputStream = getActivity().getApplicationContext().openFileOutput(FILENAME, Context.MODE_PRIVATE);
             fileOutputStream.write((String.valueOf(intNow) + "\n" + String.valueOf(intNow * 2)).getBytes());
             fileOutputStream.close();
@@ -110,6 +118,9 @@ public class PlaceholderFragment2 extends Fragment {
         textView3 = view.findViewById(R.id.textView3);
         textView4 = view.findViewById(R.id.textView4);
         editText1 = view.findViewById(R.id.editText1);
+        textToSpeech1 = new TextToSpeech(getActivity().getApplicationContext(), this);
+        textToSpeech2 = new TextToSpeech(getActivity().getApplicationContext(), this);
+
         readFileWord();
         setWord();
 
@@ -167,6 +178,11 @@ public class PlaceholderFragment2 extends Fragment {
         editText1.setText("");
         textView3.setTextColor(Color.rgb(0, 0, 0));
         textView4.setText("" + intNow + " / " + listWord.size());
+
+        textToSpeech1.speak(stringNow, TextToSpeech.QUEUE_FLUSH, null, "id1");
+        textToSpeech2.speak(listWord.get(intNow)[1], TextToSpeech.QUEUE_FLUSH, null, "id2");
+
+
     }
 
     public void readFileWord() {
@@ -187,4 +203,37 @@ public class PlaceholderFragment2 extends Fragment {
             e.printStackTrace();
         }
     }
+
+
+    private int index = 0;
+
+    @Override // настройка речегово движка
+    public void onInit(int status) {
+        if (index == 0) {
+            Locale locale1 = new Locale("en");
+            textToSpeech1.setLanguage(locale1);
+            textToSpeech1.setSpeechRate(5.0f);
+
+//            for (Voice v : textToSpeech1.getVoices()) {
+//                if (v.getName().startsWith("en-us")) {
+//                    System.out.println("############################      " + v.getName());
+//                    if (v.getName().equals("en-us-x-sfg#male_3-local"))
+//                        textToSpeech1.setVoice(v);
+//                }
+//            }
+            index++;
+        } else if (index == 1) {
+            Locale locale2 = new Locale("ru");
+            textToSpeech2.setLanguage(locale2);
+            textToSpeech2.setSpeechRate(50.0f);
+//            for (Voice v : textToSpeech2.getVoices()) {
+//                if (v.getName().startsWith("ru")) {
+//                    System.out.println("!!!!!!!!!!!!!!!!!!!!     " + v.getName());
+//                    if (v.getName().equals("ru-ru-x-dfc#male_2-local"))
+//                        textToSpeech2.setVoice(v);
+//                }
+//            }
+        }
+    }
+
 }
