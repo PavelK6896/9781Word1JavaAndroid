@@ -100,7 +100,7 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
             Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main2, container, false);
 
-        try {
+        try {//загрузка из файла
             FileInputStream fileInputStream = getActivity().getApplicationContext().openFileInput(FILENAME);
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream, StandardCharsets.UTF_8));
             intNow = Integer.parseInt(bufferedReader.readLine());
@@ -113,6 +113,8 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
 
         final Button button1 = (Button) view.findViewById(R.id.button1);
         final Button button2 = (Button) view.findViewById(R.id.button2);
+        final Button button3 = (Button) view.findViewById(R.id.button3);
+
         textView1 = view.findViewById(R.id.textView1);
         textView2 = view.findViewById(R.id.textView2);
         textView3 = view.findViewById(R.id.textView3);
@@ -124,11 +126,11 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
         readFileWord();
         setWord();
 
-        button1.setText("Start");
+        button1.setText("Back");
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intNow = 0;
+                intNow--;
                 setWord();
             }
         });
@@ -137,6 +139,15 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
             @Override
             public void onClick(View v) {
                 intNow++;
+                setWord();
+            }
+        });
+
+        button3.setText("Start");
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intNow = 0;
                 setWord();
             }
         });
@@ -152,17 +163,18 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
 
             public void onTextChanged(CharSequence s, int start,
                                       int before, int count) {
+
                 if (s.length() == 0) return;
                 if (stringNow.charAt(0) == s.charAt(s.length() - 1)) {
                     stringNow = stringNow.substring(1);
-                    textView3.setText(stringNow);
-                    textView3.setTextColor(Color.rgb(0, 0, 0));
+                    textView1.setText(stringNow);
+                    textView1.setTextColor(Color.rgb(0, 0, 0));
                     if (stringNow.length() == 0) {
                         intNow++;
                         setWord();
                     }
                 } else {
-                    textView3.setTextColor(Color.argb(255, 250, 0, 0));
+                    textView1.setTextColor(Color.argb(255, 250, 0, 0));
                 }
             }
         });
