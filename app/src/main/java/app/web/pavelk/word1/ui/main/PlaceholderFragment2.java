@@ -17,20 +17,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProviders;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
 import app.web.pavelk.word1.R;
+import app.web.pavelk.word1.ui.main.util.FileUtil;
 
 
 /**
@@ -42,11 +39,11 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
     private static final String ARG_SECTION_NUMBER = "section_number";
     private String FILENAME = "save3";
 
-
     private PageViewModel pageViewModel;
-    private List<String[]> listWord = new ArrayList<>();
+    private List<String[]> dictionary1;
+    private int sizeDictionary = 0;
     private String stringNow = "";
-    private int intNow = 0;
+    private int indexWord = 0;
     private int intNow2 = 0;
     private TextView textView1;
     private TextView textView2;
@@ -65,16 +62,16 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
         return fragment;
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        pageViewModel = ViewModelProviders.of(this).get(PageViewModel.class);
-        int index = 1;
-        if (getArguments() != null) {
-            index = getArguments().getInt(ARG_SECTION_NUMBER);
-        }
-        pageViewModel.setIndex(index);
-    }
+//    @Override
+//    public void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        pageViewModel = ViewModelProviders.of(this).get(PageViewModel.class);
+//        int index = 1;
+//        if (getArguments() != null) {
+//            index = getArguments().getInt(ARG_SECTION_NUMBER);
+//        }
+//        pageViewModel.setIndex(index);
+//    }
 
 
     @Override
@@ -86,7 +83,7 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
     public void onStop() {
         try {//save file
             FileOutputStream fileOutputStream = getActivity().getApplicationContext().openFileOutput(FILENAME, Context.MODE_PRIVATE);
-            fileOutputStream.write((String.valueOf(intNow) + "\n" + String.valueOf(intNow * 2)).getBytes());
+            fileOutputStream.write((String.valueOf(indexWord) + "\n" + String.valueOf(indexWord * 2)).getBytes());
             fileOutputStream.close();
         } catch (Exception e) {
             e.printStackTrace();
@@ -103,7 +100,7 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
         try {//загрузка из файла
             FileInputStream fileInputStream = getActivity().getApplicationContext().openFileInput(FILENAME);
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream, StandardCharsets.UTF_8));
-            intNow = Integer.parseInt(bufferedReader.readLine());
+            indexWord = Integer.parseInt(bufferedReader.readLine());
             intNow2 = Integer.parseInt(bufferedReader.readLine());
             System.out.println("-- " + intNow2);
             bufferedReader.close();
@@ -123,14 +120,15 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
         textToSpeech1 = new TextToSpeech(getActivity().getApplicationContext(), this);
         textToSpeech2 = new TextToSpeech(getActivity().getApplicationContext(), this);
 
-        readFileWord();
+        dictionary1 = FileUtil.loadingDictionary(this);
+        sizeDictionary = dictionary1.size();
         setWord();
 
         button1.setText("Back");
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intNow--;
+                indexWord--;
                 setWord();
             }
         });
@@ -138,7 +136,7 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intNow++;
+                indexWord++;
                 setWord();
             }
         });
@@ -147,7 +145,7 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intNow = 0;
+                indexWord = 0;
                 setWord();
             }
         });
@@ -170,7 +168,7 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
                     textView1.setText(stringNow);
                     textView1.setTextColor(Color.rgb(0, 0, 0));
                     if (stringNow.length() == 0) {
-                        intNow++;
+                        indexWord++;
                         setWord();
                     }
                 } else {
@@ -183,45 +181,24 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
     }
 
     public void setWord() {
-        stringNow = listWord.get(intNow)[0];
+        stringNow = dictionary1.get(indexWord)[0];
         textView1.setText(stringNow);
-        textView2.setText(listWord.get(intNow)[1]);
+        textView2.setText(dictionary1.get(indexWord)[1]);
         textView3.setText(stringNow);
         editText1.setText("");
         textView3.setTextColor(Color.rgb(0, 0, 0));
-        textView4.setText("" + intNow + " / " + listWord.size());
+        textView4.setText("" + indexWord + " / " + sizeDictionary);
 
         textToSpeech1.speak(stringNow, TextToSpeech.QUEUE_FLUSH, null, "id1");
-        textToSpeech2.speak(listWord.get(intNow)[1], TextToSpeech.QUEUE_FLUSH, null, "id2");
+        textToSpeech2.speak(dictionary1.get(indexWord)[1], TextToSpeech.QUEUE_FLUSH, null, "id2");
 
 
     }
 
-    public void readFileWord() {
-        String string = null;
-        try {
-            InputStream inputStream = this.getResources().openRawResource(R.raw.dictionary1);
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-            while (true) {
-                try {
-                    if ((string = bufferedReader.readLine()) == null) break;
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                listWord.add(string.split("\""));
-            }
-            inputStream.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-
-    private int index = 0;
-
+    private int indexSpeech = 0;
     @Override // настройка речегово движка
     public void onInit(int status) {
-        if (index == 0) {
+        if (indexSpeech == 0) {
             Locale locale1 = new Locale("en");
             textToSpeech1.setLanguage(locale1);
             textToSpeech1.setSpeechRate(5.0f);
@@ -233,8 +210,8 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
 //                        textToSpeech1.setVoice(v);
 //                }
 //            }
-            index++;
-        } else if (index == 1) {
+            indexSpeech++;
+        } else if (indexSpeech == 1) {
             Locale locale2 = new Locale("ru");
             textToSpeech2.setLanguage(locale2);
             textToSpeech2.setSpeechRate(50.0f);
