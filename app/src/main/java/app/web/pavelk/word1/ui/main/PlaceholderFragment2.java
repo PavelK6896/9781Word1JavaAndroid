@@ -1,13 +1,19 @@
 package app.web.pavelk.word1.ui.main;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
+import android.inputmethodservice.Keyboard;
+import android.inputmethodservice.KeyboardView;
 import android.os.Build;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -38,6 +44,11 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
 
     private static final String ARG_SECTION_NUMBER = "section_number";
     private String FILENAME = "save3";
+
+    Button button1;
+    Button button2;
+    Button button3;
+    Button button4;
 
     private PageViewModel pageViewModel;
     private List<String[]> dictionary1;
@@ -108,9 +119,10 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
             e.printStackTrace();
         }
 
-        final Button button1 = (Button) view.findViewById(R.id.button1);
-        final Button button2 = (Button) view.findViewById(R.id.button2);
-        final Button button3 = (Button) view.findViewById(R.id.button3);
+        button1 = view.findViewById(R.id.button1);
+        button2 = view.findViewById(R.id.button2);
+        button3 = view.findViewById(R.id.button3);
+        button4 = view.findViewById(R.id.button4);
 
         textView1 = view.findViewById(R.id.textView1);
         textView2 = view.findViewById(R.id.textView2);
@@ -147,6 +159,39 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
             public void onClick(View v) {
                 indexWord = 0;
                 setWord();
+            }
+        });
+
+        button3.setText("Start");
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                indexWord = 0;
+                setWord();
+            }
+        });
+
+        button4.setText("->");
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textToSpeech1.speak(dictionary1.get(indexWord)[0], TextToSpeech.QUEUE_FLUSH, null, "id1");
+            }
+        });
+
+        editText1.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                System.out.println("***********");
+                return true;
+            }
+        });
+
+        view.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                System.out.println("111111111111111111111111");
+                return true;
             }
         });
 
@@ -189,19 +234,18 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
         textView3.setTextColor(Color.rgb(0, 0, 0));
         textView4.setText("" + indexWord + " / " + sizeDictionary);
 
-        textToSpeech1.speak(stringNow, TextToSpeech.QUEUE_FLUSH, null, "id1");
+        textToSpeech1.speak(dictionary1.get(indexWord)[0], TextToSpeech.QUEUE_FLUSH, null, "id1");
         textToSpeech2.speak(dictionary1.get(indexWord)[1], TextToSpeech.QUEUE_FLUSH, null, "id2");
-
-
     }
 
     private int indexSpeech = 0;
+
     @Override // настройка речегово движка
     public void onInit(int status) {
         if (indexSpeech == 0) {
             Locale locale1 = new Locale("en");
             textToSpeech1.setLanguage(locale1);
-            textToSpeech1.setSpeechRate(5.0f);
+            textToSpeech1.setSpeechRate(2.0f);
 
 //            for (Voice v : textToSpeech1.getVoices()) {
 //                if (v.getName().startsWith("en-us")) {
@@ -214,7 +258,7 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
         } else if (indexSpeech == 1) {
             Locale locale2 = new Locale("ru");
             textToSpeech2.setLanguage(locale2);
-            textToSpeech2.setSpeechRate(50.0f);
+            textToSpeech2.setSpeechRate(4.0f);
 //            for (Voice v : textToSpeech2.getVoices()) {
 //                if (v.getName().startsWith("ru")) {
 //                    System.out.println("!!!!!!!!!!!!!!!!!!!!     " + v.getName());
@@ -224,5 +268,6 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
 //            }
         }
     }
+
 
 }
