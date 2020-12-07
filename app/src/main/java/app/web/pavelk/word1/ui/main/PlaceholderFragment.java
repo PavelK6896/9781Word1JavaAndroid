@@ -1,5 +1,6 @@
 package app.web.pavelk.word1.ui.main;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -14,6 +15,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.ThreadLocalRandom;
@@ -28,6 +34,7 @@ import app.web.pavelk.word1.ui.main.util.FileUtil;
 public class PlaceholderFragment extends Fragment implements TextToSpeech.OnInitListener {
 
     private static final String ARG_SECTION_NUMBER = "section_number";
+    private String FILENAME = "save2";
 
     private TextView textView1;
     private TextView textView4;
@@ -54,22 +61,37 @@ public class PlaceholderFragment extends Fragment implements TextToSpeech.OnInit
         return fragment;
     }
 
-//    @Override
-//    public void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        pageViewModel = ViewModelProviders.of(this).get(PageViewModel.class);
-//        int index = 1;
-//        if (getArguments() != null) {
-//            index = getArguments().getInt(ARG_SECTION_NUMBER);
-//        }
-//        pageViewModel.setIndex(index);
-//    }
+    @Override
+    public void onStop() {
+        try {//save file
+            FileOutputStream fileOutputStream = getActivity().getApplicationContext().openFileOutput(FILENAME, Context.MODE_PRIVATE);
+            fileOutputStream.write((String.valueOf(indexWord) + "\n" + String.valueOf(countWrong)).getBytes());
+            fileOutputStream.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        super.onStop();
+    }
 
     @Override
     public View onCreateView(
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
+
+
+        try {//загрузка из файла
+            FileInputStream fileInputStream = getActivity().getApplicationContext().openFileInput(FILENAME);
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream, StandardCharsets.UTF_8));
+            indexWord = Integer.parseInt(bufferedReader.readLine());
+            countWrong = Integer.parseInt(bufferedReader.readLine());
+            bufferedReader.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+
         dictionary1 = FileUtil.loadingDictionary(this);
         sizeDictionary = dictionary1.size();
 
@@ -82,6 +104,7 @@ public class PlaceholderFragment extends Fragment implements TextToSpeech.OnInit
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                Thread thread = setBlinkButton(button1);
                 checkRight(1);
             }
         });
@@ -89,6 +112,7 @@ public class PlaceholderFragment extends Fragment implements TextToSpeech.OnInit
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                Thread thread = setBlinkButton(button2);
                 checkRight(2);
             }
         });
@@ -96,13 +120,16 @@ public class PlaceholderFragment extends Fragment implements TextToSpeech.OnInit
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                Thread thread =  setBlinkButton(button3);
                 checkRight(3);
+
             }
         });
         button4 = view.findViewById(R.id.button4);
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                Thread thread = setBlinkButton(button4);
                 checkRight(4);
             }
         });
@@ -116,15 +143,98 @@ public class PlaceholderFragment extends Fragment implements TextToSpeech.OnInit
             }
         });
 
+        textView1.setTextSize(40);
+        textView4.setTextSize(20);
+        button1.setTextSize(30);
+        button2.setTextSize(30);
+        button3.setTextSize(30);
+        button4.setTextSize(30);
+
+        button1.setMinimumHeight(300);
+        button2.setMinimumHeight(300);
+        button3.setMinimumHeight(300);
+        button4.setMinimumHeight(300);
+        setInfo();
         setWord();
 
         return view;
     }
 
-    public void hint(){
+    private void setColor() {
+        int number1 = number(200);
+        int number2 = number(200);
+        int number3 = number(200);
+        button1.setBackgroundColor(Color.argb(200, number1, number2, number3));
+        button2.setBackgroundColor(Color.argb(200, number3, number2, number1));
+        button3.setBackgroundColor(Color.argb(200, number2, number3, number1));
+        button4.setBackgroundColor(Color.argb(200, number3, number1, number2));
+    }
+
+    public void hint() {
         System.out.println("hint  ");
         textToSpeech2.speak(dictionary1.get(indexWord - 1)[1], TextToSpeech.QUEUE_FLUSH, null, "id1");
+            switch (indexRight) {
+                case 1: {
+                    setBlinkText(button1);
+                    break;
+                }
+                case 2: {
+                    setBlinkText(button2);
+                    break;
+                }
+                case 3: {
+                    setBlinkText(button3);
+                    break;
+                }
+                case 4: {
+                    setBlinkText(button4);
+                    break;
+                }
+            }
 
+    }
+
+    private Thread setBlinkButton(final Button button) {
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    button.setBackgroundColor(Color.rgb(0, 155, 0));
+                    Thread.sleep(100);
+                    button.setBackgroundColor(Color.rgb( 0, 0, 0));
+                    Thread.sleep(100);
+                    button.setBackgroundColor(Color.rgb(0, 155, 0));
+                    Thread.sleep(100);
+                    button.setBackgroundColor(Color.rgb( 0, 0, 0));
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
+        thread.start();
+        return thread;
+    }
+
+
+
+    private static void setBlinkText(final Button button) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    button.setTextColor(Color.rgb(0, 155, 0));
+                    Thread.sleep(100);
+                    button.setTextColor(Color.rgb( 0, 0, 0));
+                    Thread.sleep(100);
+                    button.setTextColor(Color.rgb(0, 155, 0));
+                    Thread.sleep(100);
+                    button.setTextColor(Color.rgb( 0, 0, 0));
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
     }
 
     public int number(int size) {
@@ -133,53 +243,54 @@ public class PlaceholderFragment extends Fragment implements TextToSpeech.OnInit
         return number;
     }
 
-    public void checkRight(int button){
-        System.out.println();
-        if (indexRight == button){
+    public void checkRight(int buttonInt) {
+        if (indexRight == buttonInt) {
             textView1.setTextColor(Color.rgb(0, 155, 0));
-//            if(++countRight == 2){
             countRight++;
-                indexWord++;
-                setWord();
-//            }
-        }else{
+            indexWord++;
+            setWord();
+        } else {
             countWrong++;
             textView1.setTextColor(Color.argb(255, 250, 0, 0));
             System.out.println("--------------------------------");
         }
+        setInfo();
+    }
+
+    private void setInfo() {
         textView4.setText("" + indexWord + " / " + sizeDictionary + " | правильно " + countRight + " | неправильно " + countWrong);
     }
 
     public void setWord() {
-//        countRight = 0;
-//        countWrong = 0;
+
+        textView1.setTextColor(Color.rgb( 0, 0, 0));
         textView1.setText(dictionary1.get(indexWord)[0]);
         textToSpeech1.speak(dictionary1.get(indexWord)[0], TextToSpeech.QUEUE_FLUSH, null, "id1");
         indexRight = ThreadLocalRandom.current().nextInt(1, 4);
         textView4.setText("" + indexWord + " / " + sizeDictionary);
-        switch (indexRight){
-            case 1:{
+        switch (indexRight) {
+            case 1: {
                 button1.setText(dictionary1.get(indexWord)[1]);
                 button2.setText(dictionary1.get(number(sizeDictionary))[1]);
                 button3.setText(dictionary1.get(number(sizeDictionary))[1]);
                 button4.setText(dictionary1.get(number(sizeDictionary))[1]);
                 break;
             }
-            case 2:{
+            case 2: {
                 button2.setText(dictionary1.get(indexWord)[1]);
                 button1.setText(dictionary1.get(number(sizeDictionary))[1]);
                 button3.setText(dictionary1.get(number(sizeDictionary))[1]);
                 button4.setText(dictionary1.get(number(sizeDictionary))[1]);
                 break;
             }
-            case 3:{
+            case 3: {
                 button3.setText(dictionary1.get(indexWord)[1]);
                 button2.setText(dictionary1.get(number(sizeDictionary))[1]);
                 button1.setText(dictionary1.get(number(sizeDictionary))[1]);
                 button4.setText(dictionary1.get(number(sizeDictionary))[1]);
                 break;
             }
-            case 4:{
+            case 4: {
                 button4.setText(dictionary1.get(indexWord)[1]);
                 button2.setText(dictionary1.get(number(sizeDictionary))[1]);
                 button3.setText(dictionary1.get(number(sizeDictionary))[1]);
@@ -187,43 +298,24 @@ public class PlaceholderFragment extends Fragment implements TextToSpeech.OnInit
                 break;
             }
         }
-        indexWord++;
-    }
-
-    public void start() {
-
+        setColor();
     }
 
     private int indexSpeech = 0;
+
     @Override // настройка речегово движка
     public void onInit(int status) {
         if (indexSpeech == 0) {
             Locale locale1 = new Locale("en");
             textToSpeech1.setLanguage(locale1);
             textToSpeech1.setSpeechRate(5.0f);
-
-//            for (Voice v : textToSpeech1.getVoices()) {
-//                if (v.getName().startsWith("en-us")) {
-//                    System.out.println("############################      " + v.getName());
-//                    if (v.getName().equals("en-us-x-sfg#male_3-local"))
-//                        textToSpeech1.setVoice(v);
-//                }
-//            }
             indexSpeech++;
         } else if (indexSpeech == 1) {
             Locale locale2 = new Locale("ru");
             textToSpeech2.setLanguage(locale2);
             textToSpeech2.setSpeechRate(50.0f);
-//            for (Voice v : textToSpeech2.getVoices()) {
-//                if (v.getName().startsWith("ru")) {
-//                    System.out.println("!!!!!!!!!!!!!!!!!!!!     " + v.getName());
-//                    if (v.getName().equals("ru-ru-x-dfc#male_2-local"))
-//                        textToSpeech2.setVoice(v);
-//                }
-//            }
         }
     }
-
 
 
 }

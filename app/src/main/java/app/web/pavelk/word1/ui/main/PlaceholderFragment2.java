@@ -132,6 +132,14 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
         textToSpeech1 = new TextToSpeech(getActivity().getApplicationContext(), this);
         textToSpeech2 = new TextToSpeech(getActivity().getApplicationContext(), this);
 
+        textView1.setTextSize(50);
+        textView2.setTextSize(30);
+        textView3.setTextSize(30);
+        textView4.setTextSize(20);
+        editText1.setTextSize(50);
+
+
+
         dictionary1 = FileUtil.loadingDictionary(this);
         sizeDictionary = dictionary1.size();
         setWord();
@@ -246,26 +254,11 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
             Locale locale1 = new Locale("en");
             textToSpeech1.setLanguage(locale1);
             textToSpeech1.setSpeechRate(2.0f);
-
-//            for (Voice v : textToSpeech1.getVoices()) {
-//                if (v.getName().startsWith("en-us")) {
-//                    System.out.println("############################      " + v.getName());
-//                    if (v.getName().equals("en-us-x-sfg#male_3-local"))
-//                        textToSpeech1.setVoice(v);
-//                }
-//            }
             indexSpeech++;
         } else if (indexSpeech == 1) {
             Locale locale2 = new Locale("ru");
             textToSpeech2.setLanguage(locale2);
             textToSpeech2.setSpeechRate(4.0f);
-//            for (Voice v : textToSpeech2.getVoices()) {
-//                if (v.getName().startsWith("ru")) {
-//                    System.out.println("!!!!!!!!!!!!!!!!!!!!     " + v.getName());
-//                    if (v.getName().equals("ru-ru-x-dfc#male_2-local"))
-//                        textToSpeech2.setVoice(v);
-//                }
-//            }
         }
     }
 
