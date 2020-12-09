@@ -49,6 +49,8 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
     private Button button3;
     private Button button4;
     private Button button5;
+    private Button button6;
+    private Button button7;
     private List<String[]> dictionary1;
     private int sizeDictionary = 0;
 
@@ -140,6 +142,27 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
             @Override
             public void onClick(View v) {
                 hint();
+            }
+        });
+
+        button6 = view.findViewById(R.id.button6);
+        button6.setText("->");
+        button6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                indexWord++;
+                setWord();
+            }
+        });
+
+
+        button7 = view.findViewById(R.id.button7);
+        button7.setText("<-");
+        button7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                indexWord--;
+                setWord();
             }
         });
 
