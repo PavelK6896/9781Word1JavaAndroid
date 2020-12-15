@@ -201,7 +201,8 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
     public void hint() {
         System.out.println("hint  ");
         textToSpeech2.speak(dictionary1.get(indexWord)[1], TextToSpeech.QUEUE_FLUSH, null, "id1");
-            switch (indexRight) {
+        textToSpeech1.speak(dictionary1.get(indexWord)[0], TextToSpeech.QUEUE_FLUSH, null, "id1");
+        switch (indexRight) {
                 case 1: {
                     setBlinkText(button1, colorGreen);
                     break;
