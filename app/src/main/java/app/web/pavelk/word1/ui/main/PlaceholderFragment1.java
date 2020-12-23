@@ -85,7 +85,7 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
         try {//загрузка из файла
             FileInputStream fileInputStream = getActivity().getApplicationContext().openFileInput(FILENAME);
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream, StandardCharsets.UTF_8));
-            indexWord = Integer.parseInt(bufferedReader.readLine());
+            indexWord = 998;
             countWrong = Integer.parseInt(bufferedReader.readLine());
             bufferedReader.close();
         } catch (Exception e) {
@@ -317,10 +317,20 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
     public void setWord() {
 
         textView1.setTextColor(Color.rgb( 0, 0, 0));
+
+        if(indexWord == dictionary1.size()){
+            indexWord = 0;
+        }
+
+        if(indexWord == -1){
+            indexWord = 998;
+        }
+
         textView1.setText(dictionary1.get(indexWord)[0]);
-        textToSpeech1.speak(dictionary1.get(indexWord)[0], TextToSpeech.QUEUE_FLUSH, null, "id1");
+        textToSpeech1.speak(dictionary1.get(indexWord )[0], TextToSpeech.QUEUE_FLUSH, null, "id1");
+
         indexRight = ThreadLocalRandom.current().nextInt(1, 4);
-        textView4.setText("" + indexWord + " / " + sizeDictionary);
+        textView4.setText("" + (indexWord + 1) + " / " + sizeDictionary );
         switch (indexRight) {
             case 1: {
                 button1.setText(dictionary1.get(indexWord)[1]);
