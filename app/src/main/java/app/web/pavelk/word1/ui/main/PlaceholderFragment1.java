@@ -4,11 +4,14 @@ import android.content.Context;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.speech.tts.TextToSpeech;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -22,7 +25,12 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Locale;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.FutureTask;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 import app.web.pavelk.word1.R;
 import app.web.pavelk.word1.ui.main.util.FileUtil;
@@ -51,8 +59,10 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
     private Button button5;
     private Button button6;
     private Button button7;
+    private Switch switch1;
     private List<String[]> dictionary1;
     private int sizeDictionary = 0;
+    private boolean slowRight = false;
 
 
     public static PlaceholderFragment1 newInstance(int index) {
@@ -93,7 +103,6 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
         }
 
 
-
         dictionary1 = FileUtil.loadingDictionary(this);
         sizeDictionary = dictionary1.size();
 
@@ -101,6 +110,13 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
         textView4 = view.findViewById(R.id.textView4);
         textToSpeech1 = new TextToSpeech(getActivity().getApplicationContext(), this);
         textToSpeech2 = new TextToSpeech(getActivity().getApplicationContext(), this);
+
+        switch1 = view.findViewById(R.id.switch1);
+        switch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                slowRight = isChecked;
+            }
+        });
 
         button1 = view.findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
@@ -203,25 +219,48 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
         textToSpeech2.speak(dictionary1.get(indexWord)[1], TextToSpeech.QUEUE_FLUSH, null, "id1");
         textToSpeech1.speak(dictionary1.get(indexWord)[0], TextToSpeech.QUEUE_FLUSH, null, "id1");
         switch (indexRight) {
-                case 1: {
-                    setBlinkText(button1, colorGreen);
-                    break;
-                }
-                case 2: {
-                    setBlinkText(button2, colorGreen);
-                    break;
-                }
-                case 3: {
-                    setBlinkText(button3, colorGreen);
-                    break;
-                }
-                case 4: {
-                    setBlinkText(button4, colorGreen);
-                    break;
-                }
+            case 1: {
+                setBlinkText(button1, colorGreen);
+                break;
             }
+            case 2: {
+                setBlinkText(button2, colorGreen);
+                break;
+            }
+            case 3: {
+                setBlinkText(button3, colorGreen);
+                break;
+            }
+            case 4: {
+                setBlinkText(button4, colorGreen);
+                break;
+            }
+        }
 
     }
+
+    public boolean right() {
+        switch (indexRight) {
+            case 1: {
+                setBlinkText(button1, colorGreen, 250);
+                return true;
+            }
+            case 2: {
+                setBlinkText(button2, colorGreen, 250);
+                return true;
+            }
+            case 3: {
+                setBlinkText(button3, colorGreen, 250);
+                return true;
+            }
+            case 4: {
+                setBlinkText(button4, colorGreen, 250);
+                return true;
+            }
+        }
+        return true;
+    }
+
 
     public void error(int buttonInt) {
         System.out.println("error  ");
@@ -245,27 +284,25 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
         }
     }
 
-    private Thread setBlinkButton(final Button button) {
-        Thread thread = new Thread(new Runnable() {
+    private static void setBlinkText(final Button button, final int color1, final long time1) {
+        new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
-                    button.setBackgroundColor(Color.rgb(0, 155, 0));
-                    Thread.sleep(100);
-                    button.setBackgroundColor(Color.rgb( 0, 0, 0));
-                    Thread.sleep(100);
-                    button.setBackgroundColor(Color.rgb(0, 155, 0));
-                    Thread.sleep(100);
-                    button.setBackgroundColor(Color.rgb( 0, 0, 0));
+                    button.setTextColor(color1);
+                    Thread.sleep(time1);
+                    button.setTextColor(Color.rgb(0, 0, 0));
+                    Thread.sleep(time1);
+                    button.setTextColor(color1);
+                    Thread.sleep(time1);
+                    button.setTextColor(Color.rgb(0, 0, 0));
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-
             }
-        });
-        thread.start();
-        return thread;
+        }).start();
     }
+
 
     private final int colorGreen = Color.rgb(0, 155, 0);
     private final int colorRed = Color.argb(200, 250, 0, 0);
@@ -278,11 +315,11 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
                 try {
                     button.setTextColor(color1);
                     Thread.sleep(100);
-                    button.setTextColor(Color.rgb( 0, 0, 0));
+                    button.setTextColor(Color.rgb(0, 0, 0));
                     Thread.sleep(100);
                     button.setTextColor(color1);
                     Thread.sleep(100);
-                    button.setTextColor(Color.rgb( 0, 0, 0));
+                    button.setTextColor(Color.rgb(0, 0, 0));
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -299,10 +336,20 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
 
     public void checkRight(int buttonInt) {
         if (indexRight == buttonInt) {
-            textView1.setTextColor(Color.rgb(0, 155, 0));
-            countRight++;
-            indexWord++;
-            setWord();
+            if (slowRight) {
+                right();
+                new Handler().postDelayed(new Runnable() {
+                    public void run() {
+                        countRight++;
+                        indexWord++;
+                        setWord();
+                    }
+                }, 1000);
+            } else {
+                countRight++;
+                indexWord++;
+                setWord();
+            }
         } else {
             countWrong++;
             error(buttonInt);
@@ -316,21 +363,22 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
 
     public void setWord() {
 
-        textView1.setTextColor(Color.rgb( 0, 0, 0));
+        textView1.setTextColor(Color.rgb(0, 0, 0));
 
-        if(indexWord == dictionary1.size()){
+        if (indexWord == dictionary1.size()) {
             indexWord = 0;
         }
 
-        if(indexWord == -1){
+        if (indexWord == -1) {
             indexWord = 998;
         }
 
         textView1.setText(dictionary1.get(indexWord)[0]);
-        textToSpeech1.speak(dictionary1.get(indexWord )[0], TextToSpeech.QUEUE_FLUSH, null, "id1");
+        textToSpeech1.speak(dictionary1.get(indexWord)[0], TextToSpeech.QUEUE_FLUSH, null, "id1");
 
         indexRight = ThreadLocalRandom.current().nextInt(1, 4);
-        textView4.setText("" + (indexWord + 1) + " / " + sizeDictionary );
+//        textView4.setText("" + (indexWord + 1) + " / " + sizeDictionary);
+        setInfo();
         switch (indexRight) {
             case 1: {
                 button1.setText(dictionary1.get(indexWord)[1]);
