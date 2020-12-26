@@ -144,7 +144,7 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
         sizeDictionary = dictionary1.size();
         setWord();
 
-        button1.setText("Back");
+
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -152,7 +152,6 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
                 setWord();
             }
         });
-        button2.setText("Next");
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -234,13 +233,22 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
     }
 
     public void setWord() {
+
+        if(indexWord == dictionary1.size()){
+            indexWord = 0;
+        }
+
+        if(indexWord == -1){
+            indexWord = 998;
+        }
+
         stringNow = dictionary1.get(indexWord)[0];
         textView1.setText(stringNow);
         textView2.setText(dictionary1.get(indexWord)[1]);
         textView3.setText(stringNow);
         editText1.setText("");
         textView3.setTextColor(Color.rgb(0, 0, 0));
-        textView4.setText("" + indexWord + " / " + sizeDictionary);
+        textView4.setText("" + (indexWord + 1) + " / " + sizeDictionary);
 
         textToSpeech1.speak(dictionary1.get(indexWord)[0], TextToSpeech.QUEUE_FLUSH, null, "id1");
         textToSpeech2.speak(dictionary1.get(indexWord)[1], TextToSpeech.QUEUE_FLUSH, null, "id2");
