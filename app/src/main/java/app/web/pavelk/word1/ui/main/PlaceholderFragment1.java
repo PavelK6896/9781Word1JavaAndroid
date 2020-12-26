@@ -25,12 +25,7 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Locale;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.FutureTask;
 import java.util.concurrent.ThreadLocalRandom;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 
 import app.web.pavelk.word1.R;
 import app.web.pavelk.word1.ui.main.util.FileUtil;
@@ -358,7 +353,7 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
     }
 
     private void setInfo() {
-        textView4.setText("" + indexWord + " / " + sizeDictionary + " | правильно " + countRight + " | неправильно " + countWrong);
+        textView4.setText("" + indexWord + "/" + sizeDictionary + " r= " + countRight + " w= " + countWrong);
     }
 
     public void setWord() {
@@ -377,7 +372,6 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
         textToSpeech1.speak(dictionary1.get(indexWord)[0], TextToSpeech.QUEUE_FLUSH, null, "id1");
 
         indexRight = ThreadLocalRandom.current().nextInt(1, 4);
-//        textView4.setText("" + (indexWord + 1) + " / " + sizeDictionary);
         setInfo();
         switch (indexRight) {
             case 1: {

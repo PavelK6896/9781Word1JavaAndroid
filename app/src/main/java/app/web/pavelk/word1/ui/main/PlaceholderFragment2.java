@@ -1,11 +1,7 @@
 package app.web.pavelk.word1.ui.main;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.pm.ActivityInfo;
 import android.graphics.Color;
-import android.inputmethodservice.Keyboard;
-import android.inputmethodservice.KeyboardView;
 import android.os.Build;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
@@ -13,7 +9,6 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -139,7 +134,6 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
         editText1.setTextSize(50);
 
 
-
         dictionary1 = FileUtil.loadingDictionary(this);
         sizeDictionary = dictionary1.size();
         setWord();
@@ -234,11 +228,11 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
 
     public void setWord() {
 
-        if(indexWord == dictionary1.size()){
+        if (indexWord == dictionary1.size()) {
             indexWord = 0;
         }
 
-        if(indexWord == -1){
+        if (indexWord == -1) {
             indexWord = 998;
         }
 

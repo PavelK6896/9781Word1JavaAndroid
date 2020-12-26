@@ -34,7 +34,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         // Return a PlaceholderFragment (defined as a static inner class below).
         System.out.println(position);
 
-        if(position == 0){
+        if (position == 0) {
             return PlaceholderFragment1.newInstance(position + 1);
         }
         return PlaceholderFragment2.newInstance(position + 1);

@@ -16,7 +16,7 @@ public class FileUtil {
     public static List<String[]> loadingDictionary(Fragment fragment) {
         String string = null;
 
-       List<String[]> listWord = new ArrayList<>();
+        List<String[]> listWord = new ArrayList<>();
         try {
             InputStream inputStream = fragment.getResources().openRawResource(R.raw.dictionary1);
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
