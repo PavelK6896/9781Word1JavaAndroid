@@ -90,7 +90,7 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
         try {//загрузка из файла
             FileInputStream fileInputStream = getActivity().getApplicationContext().openFileInput(FILENAME);
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream, StandardCharsets.UTF_8));
-            indexWord = 998;
+            indexWord = Integer.parseInt(bufferedReader.readLine());
             countWrong = Integer.parseInt(bufferedReader.readLine());
             bufferedReader.close();
         } catch (Exception e) {

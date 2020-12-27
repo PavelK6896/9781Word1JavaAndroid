@@ -53,7 +53,6 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
     private int intNow2 = 0;
     private TextView textView1;
     private TextView textView2;
-    private TextView textView3;
     private TextView textView4;
     private EditText editText1;
     private TextToSpeech textToSpeech1;
@@ -67,17 +66,6 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
         fragment.setArguments(bundle);
         return fragment;
     }
-
-//    @Override
-//    public void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        pageViewModel = ViewModelProviders.of(this).get(PageViewModel.class);
-//        int index = 1;
-//        if (getArguments() != null) {
-//            index = getArguments().getInt(ARG_SECTION_NUMBER);
-//        }
-//        pageViewModel.setIndex(index);
-//    }
 
 
     @Override
@@ -121,7 +109,6 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
 
         textView1 = view.findViewById(R.id.textView1);
         textView2 = view.findViewById(R.id.textView2);
-        textView3 = view.findViewById(R.id.textView3);
         textView4 = view.findViewById(R.id.textView4);
         editText1 = view.findViewById(R.id.editText1);
         textToSpeech1 = new TextToSpeech(getActivity().getApplicationContext(), this);
@@ -129,7 +116,7 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
 
         textView1.setTextSize(50);
         textView2.setTextSize(30);
-        textView3.setTextSize(30);
+
         textView4.setTextSize(20);
         editText1.setTextSize(50);
 
@@ -163,16 +150,6 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
             }
         });
 
-        button3.setText("Start");
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                indexWord = 0;
-                setWord();
-            }
-        });
-
-        button4.setText("->");
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -183,7 +160,7 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
         editText1.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                System.out.println("***********");
+
                 return true;
             }
         });
@@ -191,7 +168,7 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
         view.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
-                System.out.println("111111111111111111111111");
+
                 return true;
             }
         });
@@ -239,9 +216,9 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
         stringNow = dictionary1.get(indexWord)[0];
         textView1.setText(stringNow);
         textView2.setText(dictionary1.get(indexWord)[1]);
-        textView3.setText(stringNow);
+
         editText1.setText("");
-        textView3.setTextColor(Color.rgb(0, 0, 0));
+
         textView4.setText("" + (indexWord + 1) + " / " + sizeDictionary);
 
         textToSpeech1.speak(dictionary1.get(indexWord)[0], TextToSpeech.QUEUE_FLUSH, null, "id1");
