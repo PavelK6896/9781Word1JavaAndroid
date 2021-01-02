@@ -28,7 +28,8 @@ import java.util.Locale;
 import java.util.concurrent.ThreadLocalRandom;
 
 import app.web.pavelk.word1.R;
-import app.web.pavelk.word1.ui.main.util.FileUtil;
+import app.web.pavelk.word1.util.Store;
+import app.web.pavelk.word1.util.Util;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -38,7 +39,7 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
 
     private static final String ARG_SECTION_NUMBER = "section_number";
     private String FILENAME = "save2";
-
+    Store store;
     private TextView textView1;
     private TextView textView4;
     private TextToSpeech textToSpeech1;
@@ -56,12 +57,16 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
     private Button button7;
     private Switch switch1;
     private List<String[]> dictionary1;
-    private int sizeDictionary = 0;
     private boolean slowRight = false;
+    private int indexSpeech = 0;
 
 
-    public static PlaceholderFragment1 newInstance(int index) {
-        PlaceholderFragment1 fragment = new PlaceholderFragment1();
+    public PlaceholderFragment1(Store store) {
+        this.store = store;
+    }
+
+    public static PlaceholderFragment1 newInstance(int index, Store store) {
+        PlaceholderFragment1 fragment = new PlaceholderFragment1(store);
         Bundle bundle = new Bundle();
         bundle.putInt(ARG_SECTION_NUMBER, index);
         fragment.setArguments(bundle);
@@ -82,24 +87,25 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
 
     @Override
     public View onCreateView(
-            @NonNull LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_main1, container, false);
+            @NonNull LayoutInflater inflater,
+            ViewGroup container,
+            Bundle savedInstanceState
+    ) {
+        dictionary1 = Store.dictionary;
 
+        System.out.println("111111111111111");
+        View view = inflater.inflate(R.layout.fragment_main1, container, false);
 
         try {//загрузка из файла
             FileInputStream fileInputStream = getActivity().getApplicationContext().openFileInput(FILENAME);
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream, StandardCharsets.UTF_8));
-            indexWord = Integer.parseInt(bufferedReader.readLine());
+            indexWord = 0;//Integer.parseInt(bufferedReader.readLine());
             countWrong = Integer.parseInt(bufferedReader.readLine());
             bufferedReader.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-
-        dictionary1 = FileUtil.loadingDictionary(this);
-        sizeDictionary = dictionary1.size();
 
         textView1 = view.findViewById(R.id.textView1);
         textView4 = view.findViewById(R.id.textView4);
@@ -117,7 +123,6 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Thread thread = setBlinkButton(button1);
                 checkRight(1);
             }
         });
@@ -125,7 +130,6 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Thread thread = setBlinkButton(button2);
                 checkRight(2);
             }
         });
@@ -133,7 +137,6 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Thread thread =  setBlinkButton(button3);
                 checkRight(3);
 
             }
@@ -142,7 +145,6 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Thread thread = setBlinkButton(button4);
                 checkRight(4);
             }
         });
@@ -200,9 +202,9 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
     }
 
     private void setColor() {
-        int number1 = number(200);
-        int number2 = number(200);
-        int number3 = number(200);
+        int number1 = Util.number(200, -1);
+        int number2 = Util.number(200, -1);
+        int number3 = Util.number(200, -1);
         button1.setBackgroundColor(Color.argb(200, number1, number2, number3));
         button2.setBackgroundColor(Color.argb(200, number3, number2, number1));
         button3.setBackgroundColor(Color.argb(200, number2, number3, number1));
@@ -258,7 +260,6 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
 
 
     public void error(int buttonInt) {
-        System.out.println("error  ");
         switch (buttonInt) {
             case 1: {
                 setBlinkText(button1, colorRed);
@@ -323,12 +324,6 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
     }
 
 
-    public int number(int size) {
-        int number = ThreadLocalRandom.current().nextInt(0, 100);
-        if (number == indexWord) number(size);
-        return number;
-    }
-
     public void checkRight(int buttonInt) {
         if (indexRight == buttonInt) {
             if (slowRight) {
@@ -353,7 +348,7 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
     }
 
     private void setInfo() {
-        textView4.setText("" + indexWord + "/" + sizeDictionary + " r= " + countRight + " w= " + countWrong);
+        textView4.setText("" + (indexWord + 1) + "/" + dictionary1.size() + " r= " + countRight + " w= " + countWrong);
     }
 
     public void setWord() {
@@ -365,7 +360,7 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
         }
 
         if (indexWord == -1) {
-            indexWord = 998;
+            indexWord = (dictionary1.size() - 1);
         }
 
         textView1.setText(dictionary1.get(indexWord)[0]);
@@ -376,37 +371,36 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
         switch (indexRight) {
             case 1: {
                 button1.setText(dictionary1.get(indexWord)[1]);
-                button2.setText(dictionary1.get(number(sizeDictionary))[1]);
-                button3.setText(dictionary1.get(number(sizeDictionary))[1]);
-                button4.setText(dictionary1.get(number(sizeDictionary))[1]);
+                button2.setText(dictionary1.get(Util.number(dictionary1.size(), indexWord))[1]);
+                button3.setText(dictionary1.get(Util.number(dictionary1.size(), indexWord))[1]);
+                button4.setText(dictionary1.get(Util.number(dictionary1.size(), indexWord))[1]);
                 break;
             }
             case 2: {
                 button2.setText(dictionary1.get(indexWord)[1]);
-                button1.setText(dictionary1.get(number(sizeDictionary))[1]);
-                button3.setText(dictionary1.get(number(sizeDictionary))[1]);
-                button4.setText(dictionary1.get(number(sizeDictionary))[1]);
+                button1.setText(dictionary1.get(Util.number(dictionary1.size(), indexWord))[1]);
+                button3.setText(dictionary1.get(Util.number(dictionary1.size(), indexWord))[1]);
+                button4.setText(dictionary1.get(Util.number(dictionary1.size(), indexWord))[1]);
                 break;
             }
             case 3: {
                 button3.setText(dictionary1.get(indexWord)[1]);
-                button2.setText(dictionary1.get(number(sizeDictionary))[1]);
-                button1.setText(dictionary1.get(number(sizeDictionary))[1]);
-                button4.setText(dictionary1.get(number(sizeDictionary))[1]);
+                button2.setText(dictionary1.get(Util.number(dictionary1.size(), indexWord))[1]);
+                button1.setText(dictionary1.get(Util.number(dictionary1.size(), indexWord))[1]);
+                button4.setText(dictionary1.get(Util.number(dictionary1.size(), indexWord))[1]);
                 break;
             }
             case 4: {
                 button4.setText(dictionary1.get(indexWord)[1]);
-                button2.setText(dictionary1.get(number(sizeDictionary))[1]);
-                button3.setText(dictionary1.get(number(sizeDictionary))[1]);
-                button1.setText(dictionary1.get(number(sizeDictionary))[1]);
+                button2.setText(dictionary1.get(Util.number(dictionary1.size(), indexWord))[1]);
+                button3.setText(dictionary1.get(Util.number(dictionary1.size(), indexWord))[1]);
+                button1.setText(dictionary1.get(Util.number(dictionary1.size(), indexWord))[1]);
                 break;
             }
         }
         setColor();
     }
 
-    private int indexSpeech = 0;
 
     @Override // настройка речегово движка
     public void onInit(int status) {

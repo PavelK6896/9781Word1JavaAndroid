@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">9781Word1Java</string>
+    <string name="app_name">Word 1</string>
     <string name="tab_text_1"> 1 </string>
     <string name="tab_text_2"> 2 </string>
+    <string name="tab_text_3"> 3 </string>
 </resources>
