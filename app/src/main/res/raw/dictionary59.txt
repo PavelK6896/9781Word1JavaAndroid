@@ -1,0 +1,100 @@
+regiment"полк
+region"район, область
+regions"Области(регионы) (TR!)
+register"(за)регистрировать
+registered"зарегистрированный, заказной (от register)
+registration"регистрация
+registry"Регистрация(регистратура) (TR!)
+regret"жалеть
+regular"регулярный
+regularly"регулярно
+regulate"регулировать, приспосабливать
+rehearsal"репетиция
+reign"царить, господствовать
+reins"поводья, вожжи
+reject"отвергать
+rejection"отказ
+rejoice"радовать(ся)
+rejoined"Воссоединенный (TR!)
+relate"относиться, связывать
+relation"отношение, связь
+relations"отношения, связи (от relation)
+relationship"родственные связи
+relative"родственник
+relax"ослаблять
+relay"смена (не shift)
+release"освобождение, освобождать
+released"освобожденный
+reliable"надежный
+reliance"доверие, уверенность
+relic"след, остаток, пережиток
+relief"облегчение, утешение
+relieve"облегчать
+relieved"избавленный !NEW!
+religion"религия
+religious"религиозный
+relish"вкус, привкус, смаковать
+reluctant"делающий что-л. с большой неохотой, по принуждению; сопротивляющийся
+reluctantly"неохотно (не unwillingly)
+rely"полагаться, доверять
+remain"оставаться
+remainder"остаток
+remained"оставшийся !NEW!
+remains"Остается (TR!)
+remark"замечать, замечание (не notice)
+remarkable"замечательный  r-
+remarkably"замечательно -y
+remarks"Замечания *e- (TR!)
+remedy"лекарство
+remember"помнить
+remembered"помнил (от remember)
+remembrance"воспоминание, память
+remind"напоминать, напомнить
+remiss"небрежный, вялый
+remote"дистанционный, удаленный
+removal"перемещение r-
+remove"удалять, убирать, перемещать
+removed"удалённый !NEW!
+renamed"Переименованный (TR!)
+render"отдавать
+rendered"Предоставленный (не supplied) (TR!)
+renew"обновлять
+renewal"обновление (не refresh)
+renewed"Возобновленный (не resumed) (TR!)
+rent"брать напрокат, снимать жилье, квартирная плата
+renting"аренда, снятие комнаты -ing
+reopen"возобновлять (не resume)
+repair"ремонтировать, ремонт, починка
+repaired"ремонтировал, отремонтированный (от repair)
+repay"оплачивать
+repeat"твердить, говорить наизусть
+repeatedly"неоднократно
+repel"отталкивать, внушать отвращение
+repent"раскаиваться
+repentance"раскаяние
+repetition"повторение
+replace"заменять, замещать
+replacement"замещение
+reply"отвечать, ответ
+report"доклад, сообщать, рассказывать
+reporter"репортер
+reporting"Сообщение -ing (TR!)
+repose"полагаться, доверяться
+represent"изображать, представлять
+representation"изображение
+representative"представитель
+reproach"упрек, осуждение, упрекать
+reproduce"воспроизводить
+reproof"порицание, выговор (не reprove)
+reprove"порицать, делать выговор
+reptile"пресмыкающееся
+republic"республика
+repulse"отражать (врага), отвергать, отталкивать, отпор
+reputation"репутация
+request"просьба
+requested"Требуемый (TR!)
+requests"просьбы (от request)
+require"требовать
+required"потребованный (не demanded) !NEW!
+requirement"требование
+requires"Требует (TR!)

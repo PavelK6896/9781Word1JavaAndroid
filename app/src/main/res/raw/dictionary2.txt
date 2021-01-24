@@ -1,8 +1,100 @@
-ability"способность, умение
-able"способный, обладающий способностью
-about"насчет, на тему, повсюду
-above"вверху, наверх, над
-abroad"за границей, за границу
-absence"отсутствие
-absent"отсутствующий, отсутствовать
-absolutely"абсолютно, совершенно
+administrator"администратор
+admirable"замечательный (не wonderful)
+admiral"адмирал
+admiration"восхищение
+admire"восхищаться
+admired"восхищался (от admire)
+admiring"Восхищающийся -ing (TR!)
+admission"допуск, вход, прием
+admit"допускать
+admittance"впуск, доступ a-ce
+admitted"Признанный(допущенный) (TR!)
+adopt"принимать, присваивать
+adopted"Принятый (TR!)
+adore"обожать
+adorn"украшать
+adrift"по течению, по воле волн
+ads"реклама
+adult"взрослый
+adults"взрослые (от adult)
+advance"продвижение вперед, продвигать
+advanced"передовой
+advancing"Продвижение -ing (TR!)
+advantage"преимущество, выгода
+advantages"Преимущества (TR!)
+adventure"рисковать, отваживаться
+adventurer"искатель приключений, авантюрист
+adventurous"отважный, предприимчивый (не undertaking)
+adversary"противник
+adversity"бедствие, несчастье
+advertise"помещать объявление, рекламировать
+advertisement"объявление, реклама
+advice"cовет
+advise"советовать
+advised"Рекомендованный (TR!)
+advocate"отстаивать, защищать
+aerial"воздушный, антенна
+aeroplane"самолет
+afar"далеко, вдали
+affair"дело, занятие
+affairs"делишки !NEW!
+affect"влиять, трогать, вредить
+affected"пораженный
+affection"привязанность, любовь
+affectionate"любящий, нежный
+affectionately"Нежно (TR!)
+affections"Привязанности (TR!)
+affirmative"утвердительный
+afford"позволить себе
+afforded"Предоставляемый *f- (TR!)
+affray"пугать
+afore"перед
+afraid"испуганный
+afresh"снова, опять
+after"после
+afternoon"время после полудня
+afterward"Позже (TR!)
+afterwards"впоследствии, позже
+again"снова
+against"против
+age"век, возраст
+aged"старый, в возрасте
+agency"агентство
+agent"деятель, исполнитель
+aggregate"совокупность
+aggregated"Соединенный (TR!)
+aggregation"Скопление (TR!)
+agitated"Взволнованный *g- (не thrilled) (TR!)
+agitation"агитация
+agony"мучение, сильная боль
+agree"соглашаться
+agreeable"приятный, милый
+agreed"согласился (от agree)
+agreement"согласие, соглашение
+agricultural"сельскохозяйственный
+agriculture"сельское хозяйство
+aha"Ага (TR!)
+ahead"вперед
+aid"помощь
+aileen"Эйлин (TR!)
+ailing"больной -ing
+aim"целиться, цель
+air"воздушный, авиационный, проветривать
+airborne"авиационный
+airliner"лайнер
+airport"аэропорт
+ajar"приоткрытый
+alarm"тревога, (вс)тревожить (alarm)
+alas"Увы (TR!)
+albert"Альберт (TR!)
+album"альбом
+alec"Алек (TR!)
+alert"бдительный, проворный
+alexis"Алексис (TR!)
+alfred"Альфред (TR!)
+alias"Псевдоним (TR!)
+aliases"Псевдонимы (TR!)
+alibi"Алиби (TR!)
+alibis"Алиби (TR!)
+alight"выходить, спускаться
+alignment"выравнивание, линия

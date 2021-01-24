@@ -1,0 +1,100 @@
+stoppage"остановка, задержка
+stopped"остановились (от stop)
+stopper"пробка, затычка
+stops"остановки (от stop)
+storage"хранение *t-
+store"магазин, имущество, запасать, снабжать
+stored"Запасенный (TR!)
+storey"этаж
+stories"истории, рассказы (от story)
+stork"аист
+storm"буря, взрыв (не blast)
+stormy"бурный
+story"рассказ, история
+stout"тучный, дородный
+stove"печь, плита
+straight"прямо, сразу, прямой, достоверный s-
+straighten"выпрямлять(ся)
+straightened"Выправляемый (TR!)
+straightforward"прямой
+strain"натягивать, напрягать(ся), напряжение
+strait"узкий, пролив, затруднительное материальное положение, нужда
+strange"странный
+strangely"странным образом
+stranger"незнакомец, иностранец
+strangers"Незнакомцы (TR!)
+strangle"задушить
+strap"ремень, стягивать ремнем
+strategy"стратегия
+straw"пустяк, мелочь
+strawberries"клубника
+strawberry"земляника
+stray"сбиваться с пути, заблудившийся
+stream"ручей, поток
+street"улица
+strength"численность, сила, прочность
+strengthen"усиливать, укреплять
+stretch"растягивать, вытягиваться
+stretched"растянутый !NEW!
+stretching"Протяжение (TR!)
+strict"точный
+strictly"строго *t-
+strike"ударять, забастовка
+striking"бьющий, ударяющий (от strike)
+string"вереница, ряд, струна, связывать
+strings"Вереницы(нити) (не threads) (TR!)
+strip"полоса
+striped"полосатый
+stripes"Полосы (TR!)
+strode"походка, большой шаг (прошедшее время) !NEW!
+stroke"удар, гладить *t
+stroll"прогулка, гулять
+strong"сильный
+strongest"Самый сильный (TR!)
+stronghold"крепость, оплот
+strongly"решительно (первая буква НЕ "d")
+struck"забастовка, удар (прошедшее время) !NEW!
+structure"структура
+struggle"бороться, борьба
+struggling"Борьба (TR!)
+stubborn"упрямый
+stuck"воткнул, приклеил !NEW!
+stud"запонка
+student"студент
+students"студенты (от student)
+studied"учился (от study)
+studio"студия
+studious"прилежный s-
+study"учиться, изучать, заниматься, исследование, кабинет
+studying"занимается (от study)
+stuff"вещество, материал, заполнять, набивать
+stuffed"Наполненный (TR!)
+stuffy"душный
+stumbled"Наткнулся (TR!)
+stump"пень
+stun"оглушать
+stupid"глупый
+style"стиль, фасон, прическа
+subdued"подавленный
+subject"предмет, содержание, подчинять
+subjected"Подвергнутый *u- (TR!)
+subjects"предметы (от subject)
+submarine"подводная лодка
+submit"подчиняться
+subqueries"Подвопросы (TR!)
+subquery"Подвопрос (TR!)
+subscribe"подписываться
+subscriber"подписчик
+subscription"подписка
+subsequent"последующий (не successive)
+subsequently"впоследствии
+subsided"Спадал (TR!)
+substance"вещество
+substantial"существенный, заметный, прочный, крепкий
+substitute"заместитель
+subtle"тонкий, неуловимый
+suburb"пригород, окраина
+succeed"достигать цели
+succeeding"Следование -ing (TR!)
+success"успех, удача
+successes"успехи (от success)

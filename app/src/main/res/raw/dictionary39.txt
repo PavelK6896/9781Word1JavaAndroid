@@ -1,0 +1,100 @@
+insignificant"незначительный, ничтожный
+insist"настаивать
+insolent"наглый, дерзкий, оскорбительный
+inspect"осматривать, инспектировать
+inspection"осмотр
+inspector"контролер, инспектор i-
+inspiration"вдохновение
+inspired"Вдохновленный (TR!)
+install"водворять, устраивать, устанавливать
+installation"Установка (TR!)
+installed"Установленный (TR!)
+installer"Монтажник (TR!)
+installing"Монтаж -ing (TR!)
+installs"Устанавливает (TR!)
+instance"пример
+instances"Случаи *n- (TR!)
+instant"мгновение
+instantly"немедленно
+instead"вместо, взамен
+instinct"инстинкт
+instinctive"инстинктивный
+institution"учреждение
+instruct"инструктировать
+instruction"инструкция
+instructor"инструктор
+instrument"инструмент
+insufficient"недостаточный
+insult"оскорбление
+insurance"страхование, страховка
+intake"поглощение
+integer"Целое число (TR!)
+integral"неотъемлемый
+intellectual"интеллигент
+intelligence"интеллект
+intelligent"умный
+intend"намереваться
+intended"предполагаемый i-
+intense"интенсивный, напряженный
+intent"намерение, цель i-
+intention"намерение, замысел
+intentional"умышленный
+intentions"Намерения (TR!)
+intently"внимательно !NEW!
+interbase"Межоснова (TR!)
+intercept"перехватывать
+intercourse"общение
+interdependent"взаимозависимый
+interest"интересовать, заинтересовывать
+interested"заинтересованный, интересующийся (от interest)
+interesting"интересный
+interface"Интерфейс (TR!)
+interfere"мешать
+interference"вмешательство
+interfering"Вмешательство -ing (TR!)
+interior"внутренний (не internal)
+intermediate"Промежуточное звено (TR!)
+internal"внутренний
+international"международный
+interposed"Вставленный (TR!)
+interpret"интерпретировать, переводить(устно) i-
+interrupt"прерывать, мешать
+interruption"прерывание
+interval"антракт, промежуток
+intervals"Интервалы (TR!)
+intervention"посредничество
+interview"встреча, беседа
+intimate"глубокий, интимный
+intimidate"пугать, запугивать
+into"в
+intolerable"невыносимый, нестерпимый
+intricate"запутанный (не entangled)
+intrigue"интрига
+introduce"предстaвлять, знакомить
+introduction"введение
+intrude"вторгаться, вмешиваться, навязываться
+invade"вторгаться
+invader"захватчик
+invalid"недействительный (не Illegal)
+invaluable"неоценимый
+invariably"неизменно
+invent"изобретать, изобрести
+invention"выдумка, изобретательность
+inventor"изобретатель
+inventory"опись
+invest"вкладывать, помещать (капитал)
+investigate"исследовать
+investigation"исследование
+investigator"исследователь
+invisible"невидимый
+invitation"приглашение
+invitations"приглашения (от invitation)
+invite"приглашать
+invited"пригласил, приглашенный (от invite)
+involuntary"невольный
+involve"втягивать, вовлекать
+involved"сложный
+inward"внутрь
+irene"Ирэн (TR!)
+iron"железо, утюг
+ironic"иронический

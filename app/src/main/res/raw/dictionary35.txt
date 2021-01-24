@@ -1,0 +1,100 @@
+headlight"фара (автомобиля), огни (паровоза)
+headline"заголовок
+headlong"очертя голову
+headmaster"Директор школы (TR!)
+headphones"наушники
+headquarters"штаб
+heads"головы (от head)
+headstone"Надгробный камень (TR!)
+heal"излечивать
+health"здоровье
+healthy"здоровый
+heap"куча
+hear"слышать
+heard"слушал, услышанный (от hear)
+hearing"слух
+heart"сердце
+hearth"печь, камин, домашний очаг
+heartily"сердечно
+hearty"искренний, (чисто)сердечный, радушный
+heat"жара
+heating"отопление
+heaven"небо, небеса, бог, провидение
+heavily"тяжело
+heavy"тяжелый
+hedge"ограда
+hedgehog"еж
+hedwig"Хедвиг (TR!)
+heed"внимание, слушать внимательно
+heedless"невнимательный, небрежный
+heel"пятка, каблук
+heels"пятки !NEW!
+height"высота
+heir"наследник
+held"держал !NEW!
+helium"Гелий (TR!)
+hell"черт
+hello"привет
+helm"руль
+helmet"шлем, каска
+help"помощь, помогать
+helped"помогал (от help)
+helpful"полезный h-
+helping"помощь
+helpless"беспомощный
+hem"рубец, кромка, кайма; подшивать, подрубать
+hemp"конопля, пенька
+hen"курица
+hence"следовательно
+henceforward"впредь, отныне
+henrietta"Генриетта (TR!)
+her"ее, ей
+herd"стадо
+here"здесь, вот
+hereafter"После этого(в будущем) (не afterward) (TR!)
+hereditary"наследственный
+herein"в этом, при сем
+hermione"Хермион (TR!)
+hermit"отшельник
+hero"герой
+heroic"героический
+heroism"героизм, доблесть
+heron"цапля
+herring"сельдь
+hers"ее
+herself"себя
+hesitate"колебаться
+hesitation"Колебание (TR!)
+hey"эй !NEW!
+hi"привет
+hick"провинциал, деревенщина !NEW!
+hide"прятать, спрятать
+hideous"безобразный, уродливый, страшный (не fearful)
+high"высокий (h-)
+higher"выше
+highly"очень, весьма
+highness"высота, возвышенность (не altitude)
+highway"большая дорога, шоссе
+hike"путешествовать пешком
+hiking"пеший поход
+hill"холм, гора
+hills"Холмы (TR!)
+hillside"Склон (TR!)
+him"его, ему
+himself"себя, себе, сам
+hinder"препятствовать, мешать
+hinge"петля, шарнир; висеть, вращаться на петлях
+hint"намек, намекать
+hip"ягода шиповника
+hire"взять напрокат
+his"его (-s)
+hiss"свистеть, шипеть, свист
+hissed"шипящий (-ed) !NEW!
+hist"тише!, тс! (TR!)
+historic"исторический
+historical"исторический
+history"история
+hit"успех, удача, попадать в цель
+hitherto"до сих пор
+hive"улей
+hoard"запас; запасать, копить (не spare, stock)

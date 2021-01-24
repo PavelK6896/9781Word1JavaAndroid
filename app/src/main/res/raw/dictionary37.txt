@@ -1,0 +1,100 @@
+hunt"охотиться
+hunter"охотник
+hunting"охота
+hurricane"ураган h-
+hurried"спешил, торопился (от hurry)
+hurriedly"поспешно !NEW!
+hurry"спешить, торопиться, спешка
+hurt"рана, болеть, причинить боль, повредить
+hurts"болеет, причиняет боль, повреждает (от hurt)
+husband"муж
+hush"водворять тишину
+hut"хижина
+hybrid"Гибрид (TR!)
+hybrids"Гибриды (TR!)
+hygienic"гигиенический
+hypothesis"Гипотеза (TR!)
+hysteria"истерия
+hysterical"истерический
+I"я
+ice"лед
+icebox"холодильник (морозильник) (не fridge)
+icicle"сосулька
+icy"ледяной
+idea"идея, мысль
+ideal"идеал, идеальный
+identical"тождественный
+identification"отождествление
+identifier"Идентификатор (TR!)
+identifiers"Идентификаторы (TR!)
+identify"опознавать, распознавать; устанавливать личность
+idiot"идиот
+idle"бесполезный
+if"если
+ignition"зажигание, воспламенение
+ignorance"незнание, невежество
+ignorant"невежественный, неосведомленный, несведущий
+ignore"игнорировать
+ill"больной
+illegal"нелегальный
+illiterate"неграмотный
+illness"болезнь
+illuminate"освещать
+illuminated"Освещенный (TR!)
+illumination"освещение
+illusion"иллюзия
+illustration"Иллюстрация (TR!)
+image"изображение, образ, имидж
+imagination"воображение
+imagine"думать, воображать
+imitate"подражать
+imitation"подражание, имитация
+immediate"непосредственный
+immediately"немедленно
+immense"громадный, необъятный
+immensely"чрезвычайно i-
+immersed"Погруженный (TR!)
+imminent"надвигающийся
+immortal"бессмертный
+impact"удар (не stroke)
+impatience"нетерпение
+impatient"нетерпеливый
+impatiently"нетерпеливо
+impediment"препятствие
+impenetrable"непроницаемый
+imperative"повелительное наклонение (грам.)
+imperfect"несовершенный
+imperial"Имперский (TR!)
+impertinence"дерзость
+implement"выполнять
+implementation"Выполнение (TR!)
+implemented"Осуществленный (TR!)
+implied"подразумеваемый (i-)
+impolite"невежливый, неучтивый
+import"импорт, ввоз
+importance"важность
+important"важный
+impose"налагать
+impossible"невозможный
+impostor"самозванец, плут
+impress"производить впечатление
+impression"впечатление
+impressive"впечатляющий -ve
+imprison"заключать в тюрьму
+improbable"невероятный
+improve"улучшать
+improved"улучшил (от improve)
+improvement"улучшение
+improvements"Усовершенствования (TR!)
+impulse"побуждение, порыв
+impure"нечистый, грязный, с примесью
+in"в
+inability"неспособность
+inaccessible"недоступный
+incessant"непрерывный, вечный
+inch"дюйм
+inches"Дюймы (TR!)
+incident"инцидент
+incidentally"между прочим
+inclination"склонность
+incline"склонять

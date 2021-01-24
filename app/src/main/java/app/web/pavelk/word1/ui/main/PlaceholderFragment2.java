@@ -1,5 +1,6 @@
 package app.web.pavelk.word1.ui.main;
 
+import android.animation.Animator;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Build;
@@ -7,15 +8,18 @@ import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
@@ -24,21 +28,24 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 
 import app.web.pavelk.word1.R;
+import app.web.pavelk.word1.util.FileUtil;
 import app.web.pavelk.word1.util.Store;
 
 
 /**
  * A placeholder fragment containing a simple view.
  */
-@RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+@RequiresApi(api = Build.VERSION_CODES.N)
 public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnInitListener {
 
     private static final String ARG_SECTION_NUMBER = "section_number";
-    private String FILENAME = "save3";
+
     Button button1;
     Button button2;
     Button button3;
@@ -55,13 +62,8 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
     private TextToSpeech textToSpeech2;
     private int indexSpeech = 0;
 
-
-    public PlaceholderFragment2(Store store) {
-        this.store = store;
-    }
-
-    public static PlaceholderFragment2 newInstance(int index, Store store) {
-        PlaceholderFragment2 fragment = new PlaceholderFragment2(store);
+    public static PlaceholderFragment2 newInstance(int index) {
+        PlaceholderFragment2 fragment = new PlaceholderFragment2();
         Bundle bundle = new Bundle();
         bundle.putInt(ARG_SECTION_NUMBER, index);
         fragment.setArguments(bundle);
@@ -69,22 +71,72 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
     }
 
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-    }
-
+    private String FILENAME3 = "save3";
+    private String FILENAME1 = "save1";
+    private int dictionaryNum;
     @Override
     public void onStop() {
-        try {//save file
-            FileOutputStream fileOutputStream = getActivity().getApplicationContext().openFileOutput(FILENAME, Context.MODE_PRIVATE);
-            fileOutputStream.write((String.valueOf(indexWord) + "\n" + String.valueOf(indexWord * 2)).getBytes());
+
+        if(Objects.isNull(getContext())){
+            return;
+        }
+
+        try {
+            FileOutputStream fileOutputStream = Objects.requireNonNull(getContext()).openFileOutput(FILENAME3, Context.MODE_PRIVATE);
+            fileOutputStream.write((String.valueOf(indexWord) + "\n" + String.valueOf(indexWord)).getBytes());
             fileOutputStream.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        try {
+            FileOutputStream fileOutputStream = getActivity().getApplicationContext().openFileOutput(FILENAME1, Context.MODE_PRIVATE);
+            fileOutputStream.write((String.valueOf(dictionaryNum)).getBytes());
+            fileOutputStream.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println("PlaceholderFragment2 onStop dictionaryNum " + dictionaryNum);
+
+
         super.onStop();
     }
+
+
+    public void loadFileD(){
+
+        if(Objects.isNull(getContext())){
+            return;
+        }
+
+        try {
+            FileInputStream fileInputStream = Objects.requireNonNull(getContext()).openFileInput(FILENAME1);
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream, StandardCharsets.UTF_8));
+            dictionaryNum = Integer.parseInt(bufferedReader.readLine());
+            Log.e("onCreateView loadFileD", "dictionaryNum " + dictionaryNum);
+            dictionary = FileUtil.loadingDictionary(getResources(), dictionaryNum);
+            bufferedReader.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            FileInputStream fileInputStream = Objects.requireNonNull(getContext()).openFileInput(FILENAME3);
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream, StandardCharsets.UTF_8));
+            indexWord = Integer.parseInt(bufferedReader.readLine());
+            bufferedReader.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @Override
+    public void setMenuVisibility(boolean menuVisible) {
+        loadFileD();
+        super.setMenuVisibility(menuVisible);
+    }
+
 
     @Override
     public View onCreateView(
@@ -92,19 +144,8 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
             ViewGroup container,
             Bundle savedInstanceState
     ) {
-        dictionary = Store.dictionary;
-        System.out.println("1222222222222222222222");
-        System.out.println(dictionary.size() + " -------------    ");
+        loadFileD();
         View view = inflater.inflate(R.layout.fragment_main2, container, false);
-
-        try {//загрузка из файла
-            FileInputStream fileInputStream = getActivity().getApplicationContext().openFileInput(FILENAME);
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream, StandardCharsets.UTF_8));
-            indexWord = 0;// Integer.parseInt(bufferedReader.readLine());
-            bufferedReader.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
         button1 = view.findViewById(R.id.button1);
         button2 = view.findViewById(R.id.button2);
@@ -115,8 +156,8 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
         textView2 = view.findViewById(R.id.textView2);
         textView4 = view.findViewById(R.id.textView4);
         editText1 = view.findViewById(R.id.editText1);
-        textToSpeech1 = new TextToSpeech(getActivity().getApplicationContext(), this);
-        textToSpeech2 = new TextToSpeech(getActivity().getApplicationContext(), this);
+        textToSpeech1 = new TextToSpeech(Objects.requireNonNull(getContext()), this);
+        textToSpeech2 = new TextToSpeech(Objects.requireNonNull(getContext()), this);
 
         textView1.setTextSize(50);
         textView2.setTextSize(30);
@@ -157,22 +198,6 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
             }
         });
 
-        editText1.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-
-                return true;
-            }
-        });
-
-        view.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-
-                return true;
-            }
-        });
-
         editText1.addTextChangedListener(new TextWatcher() {
 
             public void afterTextChanged(Editable s) {
@@ -204,6 +229,9 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
     }
 
     public void setWord() {
+        if(Objects.isNull(dictionary) || dictionary.isEmpty() ){
+            return;
+        }
 
         if (indexWord == dictionary.size()) {
             indexWord = 0;
@@ -224,7 +252,6 @@ public class PlaceholderFragment2 extends Fragment implements TextToSpeech.OnIni
         textToSpeech1.speak(dictionary.get(indexWord)[0], TextToSpeech.QUEUE_FLUSH, null, "id1");
         textToSpeech2.speak(dictionary.get(indexWord)[1], TextToSpeech.QUEUE_FLUSH, null, "id2");
     }
-
 
     @Override // настройка речегово движка
     public void onInit(int status) {

@@ -1,0 +1,100 @@
+bus"автобус
+bush"куст
+bushes"кусты !NEW!
+busily"Деловито (TR!)
+business"дело, бизнес, деловой
+businessmen"бизнесмены (от businessman)
+bust"бюст
+bustle"суетиться, суматоха, суета
+busts"Бюсты (TR!)
+busy"занятый
+but"но
+butcher"мясник
+butler"Дворецкий (TR!)
+butter"масло
+button"кнопка, пуговица
+buttons"Кнопки (TR!)
+buy"покупать, купить
+buyer"покупатель
+buzz"жужжать, гудеть, жужжание, гул
+buzzer"(фабричный) гудок
+by"по, при, путем
+bye"пока (при прощании)
+byte"Байт (TR!)
+bytes"Байты (TR!)
+byword"поговорка, олицетворение (не dictum)
+cab"наемный экипаж, извозчик, такси
+cabbage"капуста
+cabin"каюта
+cabinet"кабинет (не parlour)
+cable"кабельный
+cache"Тайник (TR!)
+cadence"ритм, интонация
+caesar"Каесар (TR!)
+cafe"кафе
+cage"клетка, кабина
+cages"Клетки (TR!)
+cake"торт
+cakes"пироги !NEW!
+calamity"стихийное бедствие, большое несчастье
+calculate"рассчитывать, вычислять
+calculated"Расчетный (TR!)
+caleb"Калеб (TR!)
+calendar"календарь
+calf"слоненок, теленок, молодой кит
+call"звонить, называть (call)
+called"звонил, названный (от call)
+calling"звонящий (от call)
+calm"успокаивать
+calmly"тихо, спокойно !NEW!
+cambridge"Кембридж (TR!)
+came"пришел (от come)
+camera"фотоаппарат
+camp"лагерь
+campaign"компания, проводить кампанию
+can"уметь, мочь
+cancel"отменить, сократить
+candidate"кандидат
+candle"свеча
+candling"Миражирование -ing (TR!)
+cane"трость, палка
+canes"Тростники(трости) (TR!)
+canned"консервированный
+cannon"пушка, орудие c-
+cannot"не уметь (отрицательная форма глагола can)
+canoe"челн, байдарка
+canteen"столовая
+canvas"холст, парус
+canyon"Каньон (TR!)
+cap"шапка
+capable"способный
+capacious"просторный, вместительный, объемистый
+capacity"емкость, способность
+cape"мыс
+capital"столица
+capitalist"капиталист, капиталистический
+captain"капитан
+captive"пленный
+captivity"Захват (TR!)
+capture"захват, поймать
+captured"Захваченный (TR!)
+car"машина
+caravan"фургон
+carbon"углерод
+carbonate"Карбонат (TR!)
+card"карточка
+cardboard"картон
+cards"карточки (от card)
+care"заботиться, переживать
+career"профессия, карьера
+careers"профессии (от career)
+careful"осторожный
+carefully"осторожно, внимательно
+careless"беззаботный
+cares"заботится, переживает (от care)
+cargo"груз
+caricature"карикатура
+carla"Карла (TR!)
+carlos"Карлос (TR!)
+carpenter"плотник
+carpet"ковер, устилать

@@ -1,0 +1,100 @@
+mid"средний
+midday"полдень
+middle"средний
+midnight"полночь
+midst"середина
+might"можно, возможно (от may)
+mighty"могущественный
+mild"мягкий (не soft)
+mildred"Милдред (TR!)
+mile"миля
+miles"мили (от mile)
+military"военный
+milk"молоко
+mill"фабрика, завод, мельница
+millet"просо, пшено
+million"миллион
+millions"Миллионы (TR!)
+mind"память, мнение, помнить, возражать
+minded"Склонный (TR!)
+minds"ум !NEW!
+mine"мой (употребляется без последующего существительного)
+mineral"минeральный
+mingled"Смешанный (TR!)
+miniaturization"Миниатюризация (TR!)
+minims"Мельчайшая частица, очень маленькая доля, капля (TR!)
+minimum"минимум
+mining"горный -ing
+minister"министр
+ministry"министерство
+minor"младший, незначительный, второстепенный
+minority"меньшинство
+mint"мята
+minus"минус
+minute"минута
+minutes"минуты (от minute)
+miracle"чудо
+mirror"зеркало
+mirth"веселье, радость
+miscellaneous"смешанный, разнообразный m-
+mischief"зло, беда
+mischievous"злонамеренный, злобный, шаловливый, озорной
+miserable"несчастный
+misery"страдания, нищета
+misfortune"несчастье (m-)
+mishap"неудача (не unluck)
+mislead"вводить в заблуждение
+miss"промах, промахнуться, пропустить, скучать
+missing"недостающий, отсутствующий, пропавший (без вести)
+mission"миссия
+missionary"миссионер
+mist"дымка
+mistake"ошибка
+mistaken"ошибочный (от mistake)
+mistress"хозяйка, госпожа
+misty"туманный mi-
+mix"смешивать, мешать
+mixture"микстура
+mm"Мм (TR!)
+moan"оплакивать, стонать
+moaning"Стенание -ing (TR!)
+mob"толпа, сборище
+mobile"подвижный
+mock"насмехаться (не jeer)
+mockery"издевательство
+mode"способ
+model"модель
+moderate"умеренный
+moderately"Умеренно (TR!)
+modern"современный
+modest"скромный m-
+modification"Модификация (TR!)
+modified"видоизменённый !NEW!
+modify"модифицировать
+module"Модуль (TR!)
+moist"сырой, влажный m-
+moisture"влажность (не humidity)
+mole"крот
+molly"Молли (TR!)
+moment"момент, миг
+momentary"Мгновенный (TR!)
+momentum"импульс
+monarch"монарх
+Monday"понедельник
+money"деньги
+monkey"обезьяна
+monks"Монахи (TR!)
+monotonous"однообразный, монотонный
+monsieur"Господин (TR!)
+monster"чудовище
+monsters"Монстры (TR!)
+monstrous"чудовищный
+month"месяц
+monthly"(еже)месячный, ежемесячно
+months"месяцы (от month)
+monument"памятник (не memorial)
+monuments"памятники (от monument)
+mood"настроение
+moon"луна
+moonlight"лунный свет !NEW!
+mop"швабра, подтирать

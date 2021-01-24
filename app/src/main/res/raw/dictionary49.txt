@@ -1,0 +1,100 @@
+northern"северный
+nose"нос
+nostril"ноздря
+nostrils"Ноздри (TR!)
+not"не
+notable"заметный
+notably"исключительно
+note"запись, записка, банкнота, записывать
+notebook"тетрадь (n-)
+nothing"ничто, ничего
+notice"извещение, сообщение, замечать, обращать внимание
+notify"извещать, уведомлять (не inform)
+notion"понятие
+notions"Понятия (TR!)
+notorious"известный, отъявленный
+notwithstanding"несмотря на, тем не менее, однако
+nourishing"питательный (-ing)
+nourishment"питание, пища
+novel"роман
+novelty"новизна, новинка
+November"ноябрь
+now"сейчас
+nowadays"в наше время
+nowhere"нигде, никуда
+nuisance"досада
+null"Пустой указатель (TR!)
+nulls"Пустые указатели (TR!)
+numb"онемелый, оцепенелый (не dumb, )
+number"номер
+numbers"Номера(числа) (TR!)
+numerals"числительные (от numeral)
+numeric"Числовой (TR!)
+numerous"многочисленный
+nurse"няня (не nanny)
+nursery"детский, ясли
+nut"орех
+nuts"орехи (от nut)
+nylon"нейлон, нейлоновый
+oak"дуб
+oar"весло
+oars"вёсла !NEW!
+oath"клятва, присяга
+obedience"послушание
+obedient"послушный
+obey"подчиняться, слушаться
+object"возражать, предмет
+objected"Возразил (не retorted) (TR!)
+objection"возражение, протест
+objections"возражения (от objection)
+objective"цель, стремление (-ve)
+objects"Объекты(цели) (TR!)
+obligation"обязательство
+oblige"обязывать
+obliged"обязан, признателен (от oblige)
+obscure"затемнять, затруднять понимание
+observation"наблюдение, замечание
+observe"наблюдать, замечать (не outlook)
+observed"наблюдаемый !NEW!
+observer"наблюдатель
+obstacle"препятствие
+obtain"добиваться
+obtained"Полученный *b- (TR!)
+obvious"очевидный o-
+obviously"очевидно o-
+occasion"случай, обстоятельство
+occasional"случайный
+occasionally"изредка
+occasioned"Причиняемый (TR!)
+occupation"занятие
+occupied"занятый !NEW!
+occupy"занимать, завоёвывать
+occur"случаться
+occurrence"Возникновение (TR!)
+occurs"Происходит (TR!)
+ocean"океан
+octavian"Октавиан (TR!)
+October"октябрь
+odd"странный
+odds"разница, неравенство
+odour"запах, аромат o-
+of"предлог родительного падежа (кого?, чего?)
+off"прочь, от
+offence"обида
+offend"обижать, обидеть (o-)
+offended"обиженный !NEW!
+offensive"наступление
+offer"предлагать
+offering"предложение
+office"офис, контора
+officer"служащий, офицер
+official"официальный, чиновник
+officially"официально
+offset"смещенный
+offspring"Потомство (TR!)
+often"часто
+oh"O!
+oil"масло
+OK"все в порядке
+old"старый
+oldest"старший, самый старый

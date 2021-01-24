@@ -1,0 +1,100 @@
+creeping"Ползающий (TR!)
+crept"ползал !NEW!
+crescent"полумесяц
+crest"гребешок, хохолок, гребень (волны, горы)
+crevice"трещина, расщелина
+crew"судовая команда, экипаж
+cricket"крикет (спорт.)
+cries"Крики (TR!)
+crime"преступление, преступность
+criminal"преступник, уголовный
+crimson"алый, малиновый (не scarlet)
+cringe"раболепствовать
+cripple"калечить, уродовать (не destroy, disable)
+crisis"кризис, перелом (в ходе болезни)
+crisp"хрустящий картофель
+critical"критический
+criticism"критика
+criticize"критиковать
+crocodile"крокодил
+crook"крюк, крючок, поворот
+crooked"кривой
+crop"урожай
+cross"пересекать
+crossing"переход, пересечение
+crouch"притаиться
+crouched"Присел (TR!)
+crow"ворона
+crowd"толпа, толпиться
+crowded"многолюдный
+crown"корона
+crude"сырой, необработанный
+cruel"жестокий, беспощадный
+cruelty"жестокость
+cruise"морское путешествие (c-)
+crumb"крошка
+crumble"крошить(ся)
+crushed"Сокрушенный (TR!)
+crust"корка, кора
+cry"кричать, восклицать
+crying"кричащий (-ing) !NEW!
+crystal"хрусталь
+cub"детеныш (зверя)
+cubic"кубический
+cuckoo"кукушка
+cucumber"огурец
+cucumbers"огурцы (от cucumber)
+cuff"наручники, лёгкий удар
+culprit"обвиняемый, преступник (не accused)
+cultivate"обрабатывать
+cultivated"Выращенный (TR!)
+cultivation"Культивирование (TR!)
+cunning"хитрость, хитрый, коварный -ing
+cup"чашка
+cupboard"буфет
+cups"чашки (от cup)
+curb"сдерживать
+curdle"свертываться (о молоке)
+cure"лекарство, лечить c-
+curiosity"любопытство, редкая вещь
+curious"любознательный
+curiously"странно (не strangely) !NEW!
+curl"виться, завивать(ся); локон, завиток
+curled"Вился (TR!)
+curls"Завитки (TR!)
+currant"коринка, смородина
+current"течение, ток
+currently"В настоящее время (TR!)
+curse"проклятие
+cursor"Курсор (TR!)
+curt"краткий, сжатый, грубый
+curtain"занавеска, занавес
+curtains"занавески !NEW!
+curvature"Искривление (TR!)
+curve"изгиб, гнуть c-
+curved"Изогнутый (TR!)
+cushion"подушка
+custom"обычай
+customary"обычный
+customer"клиент
+cut"разрез, фасон (стрижки волос)
+cute"изящный, прелестный
+cutting"сокращение, урезание -ing
+cycle"цикл, период
+cyclist"велосипедист
+czar"Царь c- (TR!)
+dad"папа, отец
+dagger"кинжал
+daily"ежедневно
+dainty"лакомство, деликатес
+dairy"молочный магазин
+daisy"маргаритка
+dalton"Далтон (TR!)
+dam"дамба, плотина
+damage"повреждать, причинять ущерб
+dame"дама, пожилая женщина (не lady)
+damp"сырой, влажный
+dan"Дэн (TR!)
+dance"танцевать
+danced"танцевал (от dance)
+dancing"танцы -ing

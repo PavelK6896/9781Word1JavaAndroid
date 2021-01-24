@@ -1,0 +1,100 @@
+food"пища (не meal)
+fool"дурак, глупец
+foolish"глупый
+foot"нога, фут
+football"футбол
+footprint"След (TR!)
+footprints"следы !NEW!
+footstep"звук шагов, след ноги
+for"для, за, на
+forbes"Форбес (TR!)
+forbid"запрещать
+forbidden"Запрещенным (TR!)
+force"сила
+forced"принудительный, принужденный
+forcible"насильственный, убедительный
+ford"брод, переходить вброд (не wade)
+fore"передний
+foregoing"Предшествующий (не preceding) -ing (TR!)
+foreground"передний план
+forehead"лоб
+foreign"иностранный
+foreigner"иностранец
+foreman"мастер, старший рабочий, техник, прораб
+foremost"передовой f-
+forepaws"Передние лапы (TR!)
+foresight"предвидение, предусмотрительность
+forest"лес
+forester"Лесник (TR!)
+forests"Леса (TR!)
+forever"вечно !NEW!
+foreword"предисловие
+forge"выдумывать
+forgery"подделка, подлог
+forget"забыть
+forgetful"забывчивый
+forgive"прощать
+forgot"забыл (от forget)
+forgotten"забытый (от forget)
+fork"вилка
+form"бланк, форма, формировать
+formal"официальный, формальный
+formally"формально
+formation"образование, структура, формирование
+formed"сформировавшийся, организованный
+former"бывший
+formerly"прежде, некогда
+formidable"внушительный (не tremendous)
+forming"Формирование (TR!)
+forms"формы (от form)
+formula"формула
+fort"Форт (TR!)
+forth"вперед, впредь, далее (f-)
+forthwith"тотчас, немедленно f-
+fortitude"стойкость, мужество
+fortnight"две недели
+fortress"крепость
+fortunate"счастливый
+fortunately"к счастью
+fortune"удача, счастье
+fortunes"Благосостояния (не welfares) (TR!)
+forty"сорок
+forward"передовой, вперед, впредь
+fossil"ископаемое
+foster"воспитывать
+fought"сражался !NEW!
+foul"загрязненный, грязный, бесчестный
+found"нашел, найденный (от find)
+foundation"основание
+fountain"источник, фонтан
+four"четыре
+fourteen"четырнадцать
+fourteenth"четырнадцатый
+fourth"четвертый
+fowl"птица (домашняя)
+fowls"Домашние птицы (TR!)
+fox"лиса
+fraction"дробь, частица f-
+fracture"перелом, излом; ломать
+fragile"хрупкий
+fragment"отрывок, обрывок
+frail"хрупкий, хилый
+frame"оправа, рамка
+frames"оправы, рамки (от frame)
+framework"каркас
+France"Франция
+frank"искренний, откровенный, открытый
+frankly"откровенно
+frantic"неистовый ******c
+frantically"неистово !NEW!
+franz"Франз (TR!)
+fraud"обман, фальшивка
+fray"шумная ссора, обтрепываться
+freakish"капризный, причудливый
+free"свободный
+freedom"свобода f-
+freely"свободно
+freeman"полноправный гражданин !NEW!
+freeze"замерзать
+freezing"замерзание
+freight"груз, грузовой

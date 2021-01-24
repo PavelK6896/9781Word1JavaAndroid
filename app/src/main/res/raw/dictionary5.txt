@@ -1,0 +1,100 @@
+arrive"приезжать
+arrived"приехал, прибыл (от arrive)
+arriving"прибывающий (-ing)
+arrow"стрела
+arson"поджог
+art"искусство
+artful"хитрый, ловкий
+article"статья, предмет, изделие
+articles"предметы (от article)
+artificial"искусственный
+artillery"артиллерия
+artist"художник
+artistic"художественный
+arts"Искусства (TR!)
+as"как, так, в то время как
+asa"Аса (TR!)
+ascent"восхождение, подъем a-
+ascertain"установить, удостовериться
+ascertained"Установленный (TR!)
+ash"ясень
+ashamed"пристыженный !NEW!
+ashes"Пепел (TR!)
+ashore"на берег
+asia"Азия (TR!)
+aside"в сторону
+ask"просить, спрашивать
+asked"просил, требовал (от ask)
+asking"спрашивающий, просящий
+asks"спрашивает (от ask)
+asleep"спящий (не sleepy)
+aspect"взгляд, точка зрения
+ass"осел (библ.)
+assassination"убийство
+assault"нападать, нападение
+assemble"созывать
+assembled"Собранный (TR!)
+assembly"собрание, ассамблея
+asserted"Утвержденный (не attested) (TR!)
+asset"имущество
+assign"назначать
+assigned"Назначенный (TR!)
+assignment"назначение
+assist"помочь, помогать
+assistance"помощь
+assistant"помощник
+assisted"Помогал (TR!)
+associate"соединять, присоединять
+association"ассоциация, соединение
+assortment"выбор, ассортимент
+assume"принимать на себя
+assumed"Принятый (не adopted) (TR!)
+assumption"предположение
+assurance"заверение, уверенность
+assure"уверять, обеспечивать
+assured"уверенный, застрахованный !NEW!
+asterisk"звездочка
+astonished"удивленный !NEW!
+astonishing"Удивительный -ing (TR!)
+astonishment"удивление, изумление
+astronomy"астрономия
+at"в, у
+ate"ел, съел (от eat)
+athlete"спортсмен, атлет
+athletics"атлетика
+athwart"через, вопреки (не through)
+atlas"атлас
+atmosphere"атмосфера
+atmospheric"атмосферный
+atom"атом
+attach"придавать
+attached"Приложенный (не embedded) (TR!)
+attachment"привязанность, прикрепление
+attack"нападение, наступать
+attacked"Атакованный (TR!)
+attacks"Нападения (TR!)
+attempt"пробовать, пытаться, попытка
+attempting"Попытка -ing (TR!)
+attempts"Попытки (TR!)
+attend"посещать, обслуживать
+attendance"присутствие, аудитория
+attendant"служитель, слуга
+attendants"Дежурные (TR!)
+attended"обслуженный, обслужил (от attend)
+attending"Посещение(сопровождение) -ing (TR!)
+attention"внимание
+attentions"Внимание (TR!)
+attentive"внимательный, заботливый
+attest"удостоверять
+attic"чердак
+attire"украшение, наряд
+attitude"позиция, отношение, поза
+attorney"адвокат, поверенный (не advocate)
+attract"привлекать
+attraction"привлекательность, аттракцион
+attractive"привлекательный
+attribute"приписывать
+attributed"Приписанный (TR!)
+auction"аукцион
+audacity"отвага, нахальство
+audible"слышный, слышимый

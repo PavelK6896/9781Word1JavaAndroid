@@ -11,7 +11,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Util {
     public static int number(int size, int indexWord) {
         int number = ThreadLocalRandom.current().nextInt(0, size);
-        if (number == indexWord) number(size, indexWord);
+//        if (number == indexWord) number(size, indexWord);
         return number;
     }
 }

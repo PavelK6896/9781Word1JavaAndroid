@@ -1,0 +1,100 @@
+wag"махать, трясти
+wage"заработная плата
+wager"держать пари, рисковать
+waggoner"Извозчик (TR!)
+wagon"повозка !NEW!
+wail"вопль, вой, вопить, выть
+wailed"Вопил (TR!)
+wailing"Вопящий -ing (TR!)
+waist"талия
+waistcoat"жилет
+wait"ждать, ожидать, ожидание
+waited"ждал (от wait)
+waiter"официант
+waiting"ждать (от to keep waiting)
+waitress"официантка
+wake"будить, просыпаться
+walk"гулять, ходить пешком (не hike)
+walked"гулял (от walk)
+walking"гуляющий
+wall"стена
+wallace"Уоллис (TR!)
+wallet"бумажник
+wallpaper"обои
+walnut"грецкий орех
+walrus"морж
+walter"Уолтер (TR!)
+wan"бледный, изнуренный
+wand"Палочка (TR!)
+wander"бродить, блуждать
+wanderer"странник (не stranger)
+wandering"блуждание !NEW!
+want"хотеть, желать, нуждаться в
+wanted"хотел, желанный (от want)
+wanting"Желание (TR!)
+wants"хочет, желает, нуждается в (от want)
+war"война, воевать
+ward"опека
+wardrobe"гардероб
+warehouse"склад, пакгауз
+warily"осторожно
+warm"теплый, согревать
+warmly"тепло (-- как?
+warmth"тепло, теплота, сердечность
+warn"предупреждать w-
+warning"предупреждение
+warrant"полномочие, ордер, гарантировать
+warrior"воин (w-)
+warriors"Воины (TR!)
+wars"Войны (TR!)
+wary"осторожный
+was"был (от be)
+wash"мыть, стирать, мытье, стирка
+washed"мыл, вымытый (от wash)
+wasp"оса
+waspish"злой, раздражительный (не vicious)
+waste"тратить, использованный, негодный
+wasted"Потраченный впустую (TR!)
+wasteful"расточительный
+watch"часы, cмотреть, наблюдать
+watcher"сторож, наблюдатель
+watches"часы (от watch)
+watchful"бдительный (не vigilant)
+watching"просмотр
+watchman"(ночной) сторож
+water"вода, поливать, разбавлять
+waterproof"непромокаемый, непромокаемый плащ
+watery"водянистый, дождевой, бесцветный
+wave"волна
+waved"Махал (TR!)
+waver"колебаться, быть в нерешительности
+waving"Помахивание (TR!)
+wavy"волнистый, бурный
+wax"воск, восковой
+waxworks"Восковые фигуры (TR!)
+way"дорога, путь, способ
+wayfarer"путник, пешеход
+we"мы
+weak"слабый
+weakness"слабость
+wealth"богатство
+wealthy"богатый (w-)
+weapon"оружие
+weapons"Оружие (TR!)
+wear"одежда, носить, быть одетым
+weariness"усталость
+wearisome"скучный, надоедливый
+weary"усталый, утомительный, утомлять(ся), устать, потерять терпение
+weather"погода
+weave"ткать, плести
+web"ткань, лента, перемычка
+wedding"свадьба, венчание
+wedge"клин
+Wednesday"среда
+weed"сорняк, полоть
+week"неделя
+weekend"выходные
+weekly"еженедельный, еженедельно
+weep"плакать
+weeping"Плач *e-ing (TR!)
+weigh"взвешивать, весить

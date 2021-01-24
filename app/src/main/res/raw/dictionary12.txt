@@ -1,0 +1,100 @@
+carriage"вагон
+carrier"носильщик, транспортное средство
+carrot"морковь
+carry"нести, носить, возить
+carrying"перевозка
+cart"телега, повозка
+carter"возчик; ломовой извозчик !NEW!
+carton"коробка
+cartoon"мультфильм
+carve"вырезать, отрезать
+carved"вырезанный (из дерева, из камня) !NEW!
+case"случай, состояние
+cash"деньги
+casks"Бочки (TR!)
+cast"бросать, ронять, менять
+castle"замок (не железный, а каменный)
+casual"случайный (не random)
+cat"кошка
+catch"уловить, понять, получить нагоняй
+catching"Ловля (TR!)
+cathedral"собор
+catherine"Кэтрин (TR!)
+cats"Коты (TR!)
+cattle"(рогатый) скот
+caught"ловил !NEW!
+cauldron"Котел (TR!)
+cause"дело, причина
+causing"Порождение -ing (TR!)
+caution"осторожность
+cautious"осторожный
+cautiously"осторожно !NEW!
+cave"пещера
+cavern"Пещера (TR!)
+cavity"впадина, полость
+cease"прекращать, останавливать
+ceased"Прекратил (TR!)
+ceiling"потолок
+celebrate"праздновать
+celebrated"праздновал (от celebrate)
+celebration"празднование
+celebrity"известность, знаменитость
+cell"камера, ячейка
+cellar"подвал, винный погреб
+cells"Ячейки (TR!)
+cement"цемент, основа
+cemetery"кладбище
+cent"цент
+center"центр
+central"центральный
+centre"центр -re
+centuries"Столетия (TR!)
+century"столетие, век
+cereals"хлебные злаки, зерновые
+ceremony"церемония
+certain"определенный, некоторый, некий c-
+certainly"конечно
+certainty"уверенность
+certificate"справка, аттестат
+cessation"прекращение (не interrupt)
+chain"цепь
+chair"стул
+chairman"председатель
+chaise"Фаэтон (TR!)
+chalk"мел
+chalked"Рисовавший мелом (TR!)
+challenge"вызывать, вызов
+chamber"палата
+chambers"Палаты *h- (TR!)
+champagne"шампанское
+champion"чемпион
+championship"чемпионат, звание чемпиона
+chance"случай, шанс
+chances"Возможности (TR!)
+change"мелкие деньги, сдача, менять, пересаживаться
+changed"поменял, изменил (от change)
+changes"меняется (от change)
+changing"Изменение(замена) (TR!)
+channel"канал
+chap"парень (разг.), малый c-
+chapter"глава (книги)
+chapters"Главы (TR!)
+char"Случайная работа (TR!)
+character"характер
+characteristic"особенность
+charge"плата, стоимость, взимать плату
+charges"издержки, расходы (от charge)
+charity"милосердие
+charles"Чарльз (TR!)
+charley"Чарли (TR!)
+charlotte"Шарлотта (TR!)
+charm"очарование
+charming"очаровательный, прелестный
+charms"Обаяния (TR!)
+chase"охотиться, преследовать, погоня, охота
+chasing"уклоняющийся (от chase)
+chat"беседа, болтовня (не blab)
+chatter"болтать, болтовня
+chatterbox"болтунья
+chauffeur"шофер
+cheap"дешевый

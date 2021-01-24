@@ -1,0 +1,100 @@
+confined"Ограниченный(заключенный) (TR!)
+confinement"Заключение (TR!)
+confirm"подтверждать, утверждать
+confirmed"Подтвержденный (TR!)
+conflict"конфликт, противоречить
+conform"соответствовать, подчиняться
+confront"стоять против
+confuse"смущать, приводить в замешательство
+confused"запутанный, смущённый !NEW!
+confusion"смущение
+congratulate"поздравлять
+congratulated"поздравил (от congratulate)
+congratulations"поздравления (от congratulation)
+conjecture"догадка, предположение, предполагать
+conjure"показывать фокусы
+connect"соединять
+connecting"Соединение -ing (TR!)
+connection"соединение
+connections"Связи (TR!)
+conquer"завоевывать, завоевать
+conquered"Побежденный (TR!)
+conquest"завоевание, покорение
+conscience"совесть, сознание
+conscientious"добросовестный
+conscious"сознающий, ощущающий
+consciousness"сознание, сознательность
+consent"разрешение
+consented"Соглашался (TR!)
+consequence"следствие, вывод, значение
+consequences"Последствия (TR!)
+consequently"следовательно, в результате
+conservative"консервативный, консерватор
+consider"считать
+considerable"значительный c-
+considerably"значительно (не tremendously)
+considerate"внимательный (к другим), чуткий
+consideration"рассмотрение, соображение
+considering"Рассмотрение -ing (TR!)
+consist"состоять
+consisted"Состоял (TR!)
+consistent"совместимый, согласующийся (не compatible)
+consists"состоит (от consist)
+consolation"утешение
+console"утешать
+conspicuous"заметный, выдающийся c-
+constant"постоянный
+constantly"постоянно
+constellation"созвездие
+constitute"назначать, учреждать
+constitution"конституция
+constraint"Ограничение (TR!)
+constraints"Ограничения (TR!)
+construct"строить, создавать
+construction"строительство
+consulate"консульство
+consult"советоваться
+consultation"консультация, совещание
+consume"потреблять
+consumption"потребление, расход
+contact"устанавливать связь
+contain"содержать, сдерживать
+containing"Содержащий (TR!)
+contains"Содержит (TR!)
+contemporary"современный
+contempt"презрение (не aversion)
+contend"бороться, соперничать *o-
+content"содержание
+contented"Удовлетворенный (не satisfied) (TR!)
+contents"содержание, содержимое, оглавление
+contest"спор, соревнование, спорить
+context"контекст, ситуация
+continent"континент
+continental"континентальный
+continual"беспрестанный
+continually"непрерывно
+continuation"продолжение
+continue"продолжать(ся)
+continued"продолжал (от continue)
+continuous"непрерывный
+contract"договор, контракт
+contradict"опровергать, противоречить
+contrary"противоположный (не opposite)
+contrast"противоположность, контраст
+contribute"делать вклад, способствовать
+contribution"вклад
+contributor"сотрудник
+contrivance"изобретение, приспособление
+contrived"Изобретенный (TR!)
+control"контроль, управление
+convalesce"выздоравливать
+convenience"удобство
+conveniences"удобства (от convenience)
+convenient"подходящий, удобный
+convention"собрание, съезд
+conventional"обычный, обусловленный
+conversation"разговор, беседа
+conversion"превращение, обращение
+convert"превращать, обращать, конвертировать
+converted"Преобразованный(конвертированный) (TR!)
+convey"перевозить, передавать, сообщать

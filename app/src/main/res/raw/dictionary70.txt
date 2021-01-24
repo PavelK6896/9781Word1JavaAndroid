@@ -1,0 +1,100 @@
+successful"удачный, успешный
+successfully"успешно
+succession"последовательность
+successive"последующий
+successor"преемник
+such"такой
+suck"сосать
+sudden"внезапный
+suddenly"внезапно, вдруг
+sue"преследовать судебным порядком, возбуждать дело в суде
+suffer"страдать
+suffering"страдание
+sufficient"достаточный
+sufficiently"достаточно
+suffix"суффикс (грам.)
+suffocate"душить, задыхаться
+sugar"сахар
+suggest"предлагать, советовать
+suggested"предлагал, предложенный (от suggest)
+suggestion"предложение
+suggestions"предложения (от suggestion)
+suicide"самоубийство, самоубийца
+suit"костюм, подходить, устраивать
+suitable"подходящий, соответствующий (не eligible)
+suitcase"чемодан
+suitcases"чемоданы (от suitcase)
+suite"номер люкс
+suited"Удовлетворенный (TR!)
+sulky"мрачный, хмурый **l**
+sulphur"сера
+sultry"знойный, душный
+sum"сумма, подводить итог
+summary"конспект, суммарный
+summer"лето, летний
+summit"вершина
+summon"вызывать
+summoned"Вызванный (TR!)
+sun"солнце
+Sunday"воскресенье
+sunflower"подсолнух
+sunk"Погруженным (TR!)
+sunlight"солнечный свет
+sunny"солнечный
+sunrise"восход солнца
+sunset"закат
+sunshine"солнечный свет
+sunstroke"солнечный удар
+superb"превосходный (не pretty)
+superficial"поверхностный, внешний
+superfluous"излишний, чрезмерный
+superintend"надзирать (за)
+superintendent"управляющий, заведующий
+superior"высший, лучший
+superiority"старшинство
+superlative"превосходная степень (грам.)
+supermarket"супермаркет
+superserver"Суперприслуга (TR!)
+superstition"суеверие, предрассудки
+supper"ужин
+supplement"добавление
+supplied"Снабженный (TR!)
+supplies"Запасы(поставки) (TR!)
+supply"снабжать
+support"поддерживать, опора, поддержка
+supported"Поддержанный (TR!)
+supporter"сторонник
+supporting"опорный -ing
+suppose"полагать, предполагать
+supposed"предполагаемый (от suppose)
+supposedly"предположительно
+suppress"подавлять
+suppressed"Подавленный (TR!)
+supreme"верховный, высший
+sure"уверенный, убедиться, безусловно
+surely"несомненно
+surface"поверхность
+surfaces"Поверхности (TR!)
+surgeon"хирург
+surgery"хирургия, приемная хирурга
+surly"угрюмый, неприветливый **r**
+surname"фамилия
+surplus"излишек
+surprise"удивление, удивлять
+surprising"удивительный
+surprisingly"удивительно
+surround"окружать
+surrounding"Окружение (TR!)
+surroundings"окрестности, среда, окружение
+survey"осмотр
+surveyed"Рассмотренный (TR!)
+surveying"Рассмотрение -ing (TR!)
+survive"пережить
+susan"Сьюзен (TR!)
+suspect"подозревать
+suspected"Подозреваемый (TR!)
+suspend"приостанавливать
+suspended"приостановленный !NEW!
+suspense"неизвестность
+suspension"приостановка, пауза, перерыв
+suspicion"подозрение

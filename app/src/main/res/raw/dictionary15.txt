@@ -1,0 +1,100 @@
+command"приказ, управлять, приказывать
+commander"командир, начальник
+commands"Команды (TR!)
+commend"хвалить
+comment"комментарий, комментировать
+commerce"торговля, коммерция -e
+commercial"торговый
+commission"комиссионные
+commit"совершать (преступление)
+committed"Совершенный(переданный) (TR!)
+committee"комитет, комиссия
+common"общий
+commonly"обыкновенно, дешево, плохо
+commonplace"банальность, общее место; банальный
+commotion"смятение, волнение
+communicate"сообщать, общаться
+communicated"Сообщенный (TR!)
+communication"сообщение, связь, общение
+community"община
+compact"компактный
+companion"товарищ
+company"компания, общество (company)
+comparable"сравнимый
+comparative"сравнительный, относительный
+comparatively"Сравнительно (TR!)
+compare"сравнивать
+compared"сравнил (от compare)
+comparison"сравнение
+compartment"купе
+compass"объем, диапазон; компас; циркуль
+compassion"жалость, сострадание !NEW!
+compatibility"совместимость !NEW!
+compelled"Вынужденный (TR!)
+compete"состязаться, конкурировать
+competition"соревнование
+compile"составлять
+complain"жаловаться
+complaint"жалоба
+complaints"жалобы (от complaint)
+complete"полный, законченный
+completed"Законченный (TR!)
+completely"совершенно, полностью
+completion"завершение, окончание
+complex"сложный, составной, комплексный
+complexion"цвет лица
+complicated"сложный
+complication"сложность
+compliment"комплимент
+compliments"комплименты (от compliment)
+comply"уступать, соглашаться
+component"компонент
+compose"сочинять, составлять
+composed"спокойный
+composite"составной, сложный
+composition"сочинение, композиция
+composure"спокойствие, самообладание
+compound"составной -u**
+comprehend"Постигать (TR!)
+comprehensive"исчерпывающий, обширный
+compress"компресс
+compromise"компромисс
+computer"компьютер
+con"Подставить (TR!)
+conceal"скрывать, утаивать
+concealed"Скрытый (TR!)
+concede"уступать, допускать
+conceit"самомнение
+conceited"самодовольный, тщеславный
+conceive"постигать, понимать
+conceived"Задуманный (TR!)
+concentrate"сосредотачиваться
+concentration"концентрация, сосредоточенность
+concept"концепция, понятие, идея
+concern"забота c-
+concerned"заинтересованный, озабоченный, огорченный
+concerning"относительно (не relatively) -ing
+concert"концерт
+concession"концессия
+conclude"завершать, заключать
+concluded"завершенный, законченный (не completed) !NEW!
+conclusion"заключение
+conclusions"Заключения (TR!)
+concrete"бетон, сгущать, конкретный
+concussion"сотрясение (мозга)
+condescending"снисходительный -ing
+condition"условие
+conduct"вести, руководитель, проводить
+conducted"Проводимый (TR!)
+conductor"кондуктор
+cone"конус, шишка (еловая)
+confer"обсуждать, совещаться; вести переговоры с
+conference"конференция, съезд
+confess"признавать
+confessed"Признанный (TR!)
+confession"признание, исповедь
+confide"доверять, полагаться, признаваться
+confidence"доверие
+confident"уверенный
+confidential"конфиденциальный, доверчивый
+configuration"Конфигурация (TR!)

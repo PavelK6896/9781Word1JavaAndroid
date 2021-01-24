@@ -6,6 +6,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,20 +26,23 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 import java.util.concurrent.ThreadLocalRandom;
 
 import app.web.pavelk.word1.R;
+import app.web.pavelk.word1.util.FileUtil;
 import app.web.pavelk.word1.util.Store;
 import app.web.pavelk.word1.util.Util;
 
 /**
  * A placeholder fragment containing a simple view.
  */
-@RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+@RequiresApi(api = Build.VERSION_CODES.N)
 public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnInitListener {
 
     private static final String ARG_SECTION_NUMBER = "section_number";
-    private String FILENAME = "save2";
+
+
     Store store;
     private TextView textView1;
     private TextView textView4;
@@ -61,28 +65,82 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
     private int indexSpeech = 0;
 
 
-    public PlaceholderFragment1(Store store) {
-        this.store = store;
-    }
-
-    public static PlaceholderFragment1 newInstance(int index, Store store) {
-        PlaceholderFragment1 fragment = new PlaceholderFragment1(store);
+    public static PlaceholderFragment1 newInstance(int index) {
+        PlaceholderFragment1 fragment = new PlaceholderFragment1();
         Bundle bundle = new Bundle();
         bundle.putInt(ARG_SECTION_NUMBER, index);
         fragment.setArguments(bundle);
         return fragment;
     }
 
+
+    private String FILENAME2 = "save2";
+    private String FILENAME1 = "save1";
+    private int dictionaryNum;
+
+
+
     @Override
     public void onStop() {
-        try {//save file
-            FileOutputStream fileOutputStream = getActivity().getApplicationContext().openFileOutput(FILENAME, Context.MODE_PRIVATE);
+        if(Objects.isNull(getContext())){
+            return;
+        }
+        try {
+
+            FileOutputStream fileOutputStream =   Objects.requireNonNull(getContext()).openFileOutput(FILENAME2, Context.MODE_PRIVATE);
             fileOutputStream.write((String.valueOf(indexWord) + "\n" + String.valueOf(countWrong)).getBytes());
             fileOutputStream.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        try {
+            FileOutputStream fileOutputStream = Objects.requireNonNull(getContext()).openFileOutput(FILENAME1, Context.MODE_PRIVATE);
+            fileOutputStream.write((String.valueOf(dictionaryNum)).getBytes());
+            fileOutputStream.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("PlaceholderFragment1 onStop dictionaryNum " + dictionaryNum);
+
         super.onStop();
+    }
+
+
+    private void loadFileD() {
+
+        if(Objects.isNull(getContext())){
+            return;
+        }
+
+        try {
+            FileInputStream fileInputStream = Objects.requireNonNull(getContext()).openFileInput(FILENAME1);
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream, StandardCharsets.UTF_8));
+            dictionaryNum = Integer.parseInt(bufferedReader.readLine());
+            Log.e("onCreateView loadFileD", "dictionaryNum " + dictionaryNum);
+            bufferedReader.close();
+            dictionary1 = FileUtil.loadingDictionary(getResources(), dictionaryNum);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            FileInputStream fileInputStream = Objects.requireNonNull(getContext()).openFileInput(FILENAME2);
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream, StandardCharsets.UTF_8));
+            indexWord = Integer.parseInt(bufferedReader.readLine());
+            countWrong = Integer.parseInt(bufferedReader.readLine());
+            bufferedReader.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @Override
+    public void setMenuVisibility(boolean menuVisible) {
+        loadFileD();
+        super.setMenuVisibility(menuVisible);
     }
 
     @Override
@@ -91,26 +149,16 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
             ViewGroup container,
             Bundle savedInstanceState
     ) {
-        dictionary1 = Store.dictionary;
 
-        System.out.println("111111111111111");
+        loadFileD();
         View view = inflater.inflate(R.layout.fragment_main1, container, false);
 
-        try {//загрузка из файла
-            FileInputStream fileInputStream = getActivity().getApplicationContext().openFileInput(FILENAME);
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream, StandardCharsets.UTF_8));
-            indexWord = 0;//Integer.parseInt(bufferedReader.readLine());
-            countWrong = Integer.parseInt(bufferedReader.readLine());
-            bufferedReader.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
 
         textView1 = view.findViewById(R.id.textView1);
         textView4 = view.findViewById(R.id.textView4);
-        textToSpeech1 = new TextToSpeech(getActivity().getApplicationContext(), this);
-        textToSpeech2 = new TextToSpeech(getActivity().getApplicationContext(), this);
+        textToSpeech1 = new TextToSpeech(Objects.requireNonNull(getContext()), this);
+        textToSpeech2 = new TextToSpeech(Objects.requireNonNull(getContext()), this);
 
         switch1 = view.findViewById(R.id.switch1);
         switch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -195,11 +243,14 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
         button2.setMaxHeight(300);
         button3.setMaxHeight(300);
         button4.setMaxHeight(300);
+
+
         setInfo();
         setWord();
 
         return view;
     }
+
 
     private void setColor() {
         int number1 = Util.number(200, -1);
@@ -348,10 +399,18 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
     }
 
     private void setInfo() {
+        if(Objects.isNull(dictionary1) || dictionary1.isEmpty() ){
+            return;
+        }
+
         textView4.setText("" + (indexWord + 1) + "/" + dictionary1.size() + " r= " + countRight + " w= " + countWrong);
     }
 
     public void setWord() {
+        if(Objects.isNull(dictionary1) || dictionary1.isEmpty() ){
+            return;
+        }
+
 
         textView1.setTextColor(Color.rgb(0, 0, 0));
 
