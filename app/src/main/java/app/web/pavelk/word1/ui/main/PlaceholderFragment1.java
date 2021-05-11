@@ -59,6 +59,7 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
     private Button button5;
     private Button button6;
     private Button button7;
+    private Button button8;
     private Switch switch1;
     private List<String[]> dictionary1;
     private boolean slowRight = false;
@@ -79,15 +80,36 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
     private int dictionaryNum;
 
 
+    @Override
+    public void onDestroy() {
+        System.out.println("------------------------onDestroy");
+        onStop();
+        super.onDestroy();
+    }
+
+    @Override
+    public void onResume() {
+        System.out.println("------------------------onResume");
+        onStop();
+        super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        System.out.println("------------------------onPause");
+        onStop();
+        super.onPause();
+    }
 
     @Override
     public void onStop() {
-        if(Objects.isNull(getContext())){
+        System.out.println("------------------------onStop");
+        if (Objects.isNull(getContext())) {
             return;
         }
         try {
 
-            FileOutputStream fileOutputStream =   Objects.requireNonNull(getContext()).openFileOutput(FILENAME2, Context.MODE_PRIVATE);
+            FileOutputStream fileOutputStream = Objects.requireNonNull(getContext()).openFileOutput(FILENAME2, Context.MODE_PRIVATE);
             fileOutputStream.write((String.valueOf(indexWord) + "\n" + String.valueOf(countWrong)).getBytes());
             fileOutputStream.close();
         } catch (Exception e) {
@@ -110,7 +132,7 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
 
     private void loadFileD() {
 
-        if(Objects.isNull(getContext())){
+        if (Objects.isNull(getContext())) {
             return;
         }
 
@@ -152,7 +174,6 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
 
         loadFileD();
         View view = inflater.inflate(R.layout.fragment_main1, container, false);
-
 
 
         textView1 = view.findViewById(R.id.textView1);
@@ -227,6 +248,16 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
             }
         });
 
+        button8 = view.findViewById(R.id.button8);
+        button8.setText("start");
+        button8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                indexWord = 0;
+                setWord();
+            }
+        });
+
         textView1.setTextSize(40);
         textView4.setTextSize(20);
         button1.setTextSize(30);
@@ -256,10 +287,10 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
         int number1 = Util.number(200, -1);
         int number2 = Util.number(200, -1);
         int number3 = Util.number(200, -1);
-        button1.setBackgroundColor(Color.argb(200, number1, number2, number3));
-        button2.setBackgroundColor(Color.argb(200, number3, number2, number1));
-        button3.setBackgroundColor(Color.argb(200, number2, number3, number1));
-        button4.setBackgroundColor(Color.argb(200, number3, number1, number2));
+        button1.setTextColor(Color.argb(200, number1, number2, number3));
+        button2.setTextColor(Color.argb(200, number3, number2, number1));
+        button3.setTextColor(Color.argb(200, number2, number3, number1));
+        button4.setTextColor(Color.argb(200, number3, number1, number2));
     }
 
     public void hint() {
@@ -399,7 +430,7 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
     }
 
     private void setInfo() {
-        if(Objects.isNull(dictionary1) || dictionary1.isEmpty() ){
+        if (Objects.isNull(dictionary1) || dictionary1.isEmpty()) {
             return;
         }
 
@@ -407,7 +438,7 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
     }
 
     public void setWord() {
-        if(Objects.isNull(dictionary1) || dictionary1.isEmpty() ){
+        if (Objects.isNull(dictionary1) || dictionary1.isEmpty()) {
             return;
         }
 
@@ -425,7 +456,7 @@ public class PlaceholderFragment1 extends Fragment implements TextToSpeech.OnIni
         textView1.setText(dictionary1.get(indexWord)[0]);
         textToSpeech1.speak(dictionary1.get(indexWord)[0], TextToSpeech.QUEUE_FLUSH, null, "id1");
 
-        indexRight = ThreadLocalRandom.current().nextInt(1, 4);
+        indexRight = ThreadLocalRandom.current().nextInt(1, 5);
         setInfo();
         switch (indexRight) {
             case 1: {
